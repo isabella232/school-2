@@ -30,4 +30,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
+
+gem 'foreman'
+gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'

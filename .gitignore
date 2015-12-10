@@ -17,6 +17,7 @@
 /tmp
 
 /config/database.yml
+/config/deploy/*
 # Rails
 .bundle
 db/*.sqlite3
@@ -96,4 +97,3 @@ capybara-*html
 
 # vendor/extensions dummy applications.
 vendor/extensions/**/spec/dummy
-
