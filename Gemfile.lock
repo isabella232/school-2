@@ -14,6 +14,17 @@ GIT
       refinerycms-settings (~> 3.0.0)
       seo_meta (~> 2.0.0.rc.1)
 
+GIT
+  remote: https://github.com/refinery/refinerycms-inquiries
+  revision: 92979a6e0c3298fab1b617b12b5bb09f9f5e1449
+  branch: master
+  specs:
+    refinerycms-inquiries (3.0.0)
+      actionmailer (~> 4.2.4)
+      filters_spam (~> 0.2)
+      refinerycms-core (~> 3.0.0)
+      refinerycms-settings (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -295,6 +306,7 @@ DEPENDENCIES
   refinerycms (~> 3.0)
   refinerycms-authentication-devise (~> 1.0.4)
   refinerycms-blog!
+  refinerycms-inquiries!
   refinerycms-settings (~> 3.0)
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)

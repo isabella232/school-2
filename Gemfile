@@ -19,6 +19,7 @@ gem 'refinerycms-settings', '~> 3.0'
 gem 'refinerycms-authentication-devise', '~> 1.0.4'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
+gem 'refinerycms-inquiries', git: 'https://github.com/refinery/refinerycms-inquiries', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
