@@ -18,6 +18,8 @@
 
 /config/database.yml
 /config/deploy/*
+/config/provision/keys/*
+
 # Rails
 .bundle
 db/*.sqlite3
