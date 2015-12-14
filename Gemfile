@@ -21,7 +21,6 @@ gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 gem 'refinerycms-inquiries', git: 'https://github.com/refinery/refinerycms-inquiries', branch: 'master'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
 
@@ -37,4 +36,8 @@ group :production do
   gem 'unicorn'
   gem 'foreman'
   gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
+end
+
+group :production do
+  gem 'puma'
 end
