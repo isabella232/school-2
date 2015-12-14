@@ -34,10 +34,7 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'foreman'
-  gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
 end
 
-group :production do
-  gem 'puma'
-end
+gem 'foreman'
+gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
