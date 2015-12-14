@@ -17,7 +17,10 @@
 /tmp
 
 /config/database.yml
+/config/secrets.yml
+/config/provision/secrets.yml
 /config/deploy/*
+/config/provision/keys/*
 # Rails
 .bundle
 db/*.sqlite3

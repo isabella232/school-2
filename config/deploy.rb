@@ -1,11 +1,11 @@
 # lock '3.1.0'
 
 set :application, 'school'
-set :repo_url, "git@github.com/macrocoders/#{fetch(:application)}.git"
+set :repo_url, "git@github.com:macrocoders/#{fetch(:application)}.git"
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, "/opt/#{fetch(:application)}"
+set :deploy_to, "/home/devop/applications/#{fetch(:application)}"
 set :scm, :git
 set :ssh_options, forward_agent: true
 set :rails_env, 'production'
@@ -17,14 +17,16 @@ set :rails_env, 'production'
 # set :use_sudo, false
 
 set :linked_files, %w(config/database.yml config/secrets.yml)
-set :linked_dirs, %w(log tmp/pids tmp/sockets)
+set :linked_dirs, %w(bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads)
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
-# ----- RVM ----------
-set :rvm_type, :system
-set :rvm_ruby_version, '2.2.3'
+# ----- RBENV ----------
+set :rbenv_type, :user
+set :rbenv_ruby, '2.2.3'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_roles, :all
 
 # - for unicorn - #
 namespace :foreman do

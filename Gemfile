@@ -11,7 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'unicorn'
 gem 'slim-rails'
 
 gem 'refinerycms', '~> 3.0'
@@ -30,8 +29,12 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'capistrano-rails'
-  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
 end
 
-gem 'foreman'
-gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
+group :production do
+  gem 'unicorn'
+  gem 'foreman'
+  gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
+end
