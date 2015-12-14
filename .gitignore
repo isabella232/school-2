@@ -18,7 +18,8 @@
 
 /config/database.yml
 /config/secrets.yml
-/config/provision/secrets.yml
+/config/provision/configs/secrets.yml
+
 /config/deploy/*
 /config/provision/keys/*
 # Rails
