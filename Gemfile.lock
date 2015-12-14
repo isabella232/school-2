@@ -310,10 +310,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv
-<<<<<<< HEAD
-=======
   capistrano3-puma
->>>>>>> e1110a3caf29f654948ae453a9de3ae5e20a536d
   coffee-rails (~> 4.1.0)
   foreman
   foreman-export-initscript!
