@@ -15,6 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+/simplepx
 
 /config/database.yml
 /config/secrets.yml
