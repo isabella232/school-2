@@ -1,0 +1,20 @@
+section id='quicklink'
+  .container
+    .row
+      ul.quicklinks
+        li
+          = link_to t('home'), refinery.root_path
+        li
+          = link_to t('blog'), '#'
+        li
+          = link_to t('portfolio'), '#'
+        li
+          = link_to t('contacts'), '#'
+
+section.copyrightbottom
+  .container
+    .row
+      .pull-left
+        | Copyright © #{Time.now.year}. #{Refinery::Core.site_name}. All rights reserved
+      .pull-right
+        | Developed by #{::Refinery::Setting.find_or_set(:site_developed_by, 'ivfefilov@gmail.com')}
