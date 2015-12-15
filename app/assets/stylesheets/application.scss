@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -12,6 +13,7 @@ COMPONENTS
 @import "animate";
 @import "main";
 @import "prettyPhoto";
+@import "icons.min"
 
 /*========================
 PAGES

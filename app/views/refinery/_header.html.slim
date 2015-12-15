@@ -1,0 +1,54 @@
+.headerdetails
+  .container
+    = link_to '#', class: 'logo pull-left' do
+      = image_tag 'logo.png'
+
+    .socialtop.pull-right
+      .call
+        i.icon-phone
+          | &nbsp;#{t('call_us')}&nbsp;:
+          span.orange
+            = ::Refinery::Setting.find_or_set(:phone_number, '+7 34141 30000')
+
+      ul.pull-right
+        li
+          = link_to '', class: 'tooltip-test', data: {original_title: 'Facebook'} do
+            i.icon-facebook
+        li
+          = link_to '', class: 'tooltip-test', data: {original_title: 'Twitter'} do
+            i.icon-twitter
+        li
+          = link_to '', class: 'tooltip-test', data: {original_title: 'LinkedIn'} do
+            i.icon-linkedin
+
+
+    .pull-right.topsearch
+      = form_tag '#', class: 'form-inline' do
+        = text_field_tag 'search', nil, class: 'form-control', placeholder: t('search_here')
+        = button_tag class: 'btn btn-orange btn-small tooltip-test', data: {original_title: 'Search'} do
+          i.icon-search.icon-white
+
+#mainmenu.mb40
+  nav.subnav
+    .container.menurelative
+      ul.nav-pills.mainmenucontain.container
+        li
+          = link_to refinery.root_path, class: 'active home' do
+            i.icon-home.icon-white.font18 &nbsp;
+            = t('home')
+        li
+          = link_to '#' do
+            i.icon-comments-alt.icon-white.font18 &nbsp;
+            = t('blog')
+        li
+          = link_to '#' do
+            i.fa.fa-picture-o.icon-white.font18 &nbsp;
+            = t('portfolio')
+        li
+          = link_to '#' do
+            i.icon-phone.icon-white.font18 &nbsp;
+            = t('contacts')
+
+/h1 id='logo'
+/  = link_to Refinery::Core.site_name, refinery.root_path
+/= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
