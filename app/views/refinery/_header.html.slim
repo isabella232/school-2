@@ -37,6 +37,22 @@
             i.icon-home.icon-white.font18 &nbsp;
             = t('home')
         li
+          = link_to ''  do
+            i.fa.fa-info.icon-white.font18 &nbsp;
+            = t('about_school')
+          div
+            ul
+              li
+                = link_to t('school_history'), '#'
+              li
+                = link_to t('documents'), '#'
+              li
+                = link_to t('employees'), '#'
+              li
+                = link_to t('sections'), '#'
+              li
+                = link_to t('calendar_of_competitions'), '#'
+        li
           = link_to '#' do
             i.icon-comments-alt.icon-white.font18 &nbsp;
             = t('blog')
@@ -46,9 +62,9 @@
             = t('portfolio')
         li
           = link_to '#' do
+            i.fa.fa-list-alt.icon-white.font18 &nbsp;
+            = t('hall_of_fame')
+        li
+          = link_to '#' do
             i.icon-phone.icon-white.font18 &nbsp;
             = t('contacts')
-
-/h1 id='logo'
-/  = link_to Refinery::Core.site_name, refinery.root_path
-/= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
