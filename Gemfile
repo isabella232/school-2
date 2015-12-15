@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
+gem 'seedbank'
 
 gem 'refinerycms', '~> 3.0'
 gem 'refinerycms-settings', '~> 3.0'
