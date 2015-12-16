@@ -33,18 +33,6 @@ unless Refinery::Page.where(slug: 'about-school').any?
     school_documents_page.update_attributes(slug: 'documents')
   end
 
-  unless Refinery::Page.where(slug: 'employees').any?
-    school_employees_page = about_school_page.children.create(
-      title: I18n.t('employees')
-    )
-    school_employees_page.parts.create(
-      title: 'Body',
-      body: '<p>School employees page.</p>',
-      position: 0
-    )
-    school_employees_page.update_attributes(slug: 'employees')
-  end
-
   unless Refinery::Page.where(slug: 'sections').any?
     school_sections_page = about_school_page.children.create(
       title: I18n.t('sections')

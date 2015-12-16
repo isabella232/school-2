@@ -15,14 +15,17 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'seedbank'
+gem 'stringex', '~> 2.5'
 
 gem 'refinerycms', '~> 3.0'
 gem 'refinerycms-settings', '~> 3.0'
+gem 'refinerycms-acts-as-indexed', git: 'https://github.com/refinery/refinerycms-acts-as-indexed', branch: 'master'
 gem 'refinerycms-authentication-devise', '~> 1.0.4'
 gem 'refinerycms-portfolio', git: 'https://github.com/macrocoders/refinerycms-portfolio.git', branch: 'master'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 gem 'refinerycms-inquiries', git: 'https://github.com/refinery/refinerycms-inquiries', branch: 'master'
+gem 'refinerycms-employees', path: 'vendor/extensions'
 
 group :development, :test do
   gem 'byebug'

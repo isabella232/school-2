@@ -1,0 +1,32 @@
+ru:
+  refinery:
+    plugins:
+      employees:
+        title: Сотрудники
+    employees:
+      admin:
+        employees:
+          actions:
+            create_new: Добавить сотрудника
+            reorder: Сортировать
+            reorder_done: Завершить сортировку
+          records:
+            title: Сотрудники
+            sorry_no_results: К сожалению, записи не найдены.
+            no_items_yet: Список сотрудников пуст. Нажмите "Добавить сотрудника", чтобы добавить новую запись.
+          employee:
+            view_live_html: Посмотреть запись в отдельном окне <br/><em>(открыть в новом окне)</em>
+            edit: Редактировать
+            delete: Удалить запись навсегда
+      employees:
+        show:
+          other: Другие сотрудники
+  activerecord:
+    attributes:
+      'refinery/employees/employee':
+        first_name: Имя
+        middle_name: Отчество
+        last_name: Фамилия
+        photo: Фото
+        post: Должность
+        description: Описание

@@ -1,0 +1,16 @@
+.container
+  ul.breadcrumb
+    li
+      = link_to root_page.title, refinery.root_path
+    li.active
+      = @page.title
+
+  .titles
+    .pull-left
+      h1.headinglefttitle
+        = @page.title  
+
+  .row.mt40
+    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+      .container
+        = render '/refinery/content_page'
