@@ -29,42 +29,4 @@
           i.icon-search.icon-white
 
 #mainmenu.mb40
-  nav.subnav
-    .container.menurelative
-      ul.nav-pills.mainmenucontain.container
-        li
-          = link_to refinery.root_path, class: 'active home' do
-            i.icon-home.icon-white.font18 &nbsp;
-            = t('home')
-        li
-          = link_to ''  do
-            i.fa.fa-info.icon-white.font18 &nbsp;
-            = t('about_school')
-          div
-            ul
-              li
-                = link_to t('school_history'), '#'
-              li
-                = link_to t('documents'), '#'
-              li
-                = link_to t('employees'), '#'
-              li
-                = link_to t('sections'), '#'
-              li
-                = link_to t('calendar_of_competitions'), '#'
-        li
-          = link_to '#' do
-            i.icon-comments-alt.icon-white.font18 &nbsp;
-            = t('blog')
-        li
-          = link_to '#' do
-            i.fa.fa-picture-o.icon-white.font18 &nbsp;
-            = t('portfolio')
-        li
-          = link_to '#' do
-            i.fa.fa-list-alt.icon-white.font18 &nbsp;
-            = t('hall_of_fame')
-        li
-          = link_to '#' do
-            i.icon-phone.icon-white.font18 &nbsp;
-            = t('contacts')
+  = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
