@@ -6,6 +6,18 @@ GIT
       foreman
 
 GIT
+  remote: https://github.com/macrocoders/refinerycms-portfolio.git
+  revision: d8f4669e38954494cb870234b6996fa881c3f761
+  branch: master
+  specs:
+    refinerycms-portfolio (3.0.0)
+      friendly_id (~> 5.1.0)
+      friendly_id-globalize (>= 1.0.0.alpha2)
+      globalize (>= 4.0.0, < 5.2)
+      refinerycms-acts-as-indexed (~> 2.0.0)
+      refinerycms-core (~> 3.0.0)
+
+GIT
   remote: https://github.com/refinery/refinerycms-blog
   revision: 5ee833618c3f365b50742df2b6ca4f591b52a467
   branch: master
@@ -134,6 +146,8 @@ GEM
       thor (~> 0.19.1)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha2)
+      friendly_id (~> 5.1.0, < 6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
@@ -205,6 +219,10 @@ GEM
       refinerycms-images (= 3.0.0)
       refinerycms-pages (= 3.0.0)
       refinerycms-resources (= 3.0.0)
+    refinerycms-acts-as-indexed (2.0.1)
+      acts_as_indexed (~> 0.8.0)
+      decorators (~> 2.0.0)
+      refinerycms-core (~> 3.0.0)
     refinerycms-authentication-devise (1.0.4)
       actionmailer (~> 4.2, >= 4.2.0)
       devise (~> 3.0, >= 3.2.4)
@@ -334,6 +352,7 @@ DEPENDENCIES
   refinerycms-authentication-devise (~> 1.0.4)
   refinerycms-blog!
   refinerycms-inquiries!
+  refinerycms-portfolio!
   refinerycms-settings (~> 3.0)
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)
