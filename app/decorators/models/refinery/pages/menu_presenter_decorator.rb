@@ -1,12 +1,26 @@
 Refinery::Pages::MenuPresenter.class_eval do
   self.list_tag_css = 'nav-pills mainmenucontain container'
 
+  def bottom_menu_to_html
+    render_bottom_menu(roots) if roots.present?
+  end
+
   private
 
   def render_menu(items)
     content_tag(menu_tag, class: 'subnav') do
       content_tag(:div, class: 'container menurelative') do
         render_menu_items(items, true)
+      end
+    end
+  end
+
+  def render_bottom_menu(menu_items)
+    content_tag(:ul, class: 'quicklinks') do
+      menu_items.each.inject(ActiveSupport::SafeBuffer.new) do |buffer, item|
+        buffer << content_tag(:li) do
+          render_menu_item_link(item)
+        end
       end
     end
   end

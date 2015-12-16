@@ -1,27 +1,7 @@
 section id='quicklink'
   .container
     .row
-      ul.quicklinks
-        li
-          = link_to t('home'), refinery.root_path
-        li
-          = link_to t('school_history'), '#'
-        li
-          = link_to t('documents'), '#'
-        li
-          = link_to t('employees'), '#'
-        li
-          = link_to t('sections'), '#'  
-        li
-          = link_to t('calendar_of_competitions'), '#'
-        li
-          = link_to t('hall_of_fame'), '#'
-        li
-          = link_to t('blog'), '#'
-        li
-          = link_to t('portfolio'), '#'
-        li
-          = link_to t('contacts'), '#'
+      = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).bottom_menu_to_html
 
 section.copyrightbottom
   .container
