@@ -1,0 +1,26 @@
+- if post.live?
+  li.clearfix id=dom_id(post)
+    .thumbnail.thumbnail-blog
+      .listclear
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          - if blog_post_teaser_enabled?
+            = blog_post_teaser(post)
+          - else
+            = post.body.html_safe
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          .bloggirdicon
+            span.mr10
+              i.icon-calendar&nbsp;
+              = t('created_at', scope: 'refinery.blog.shared.posts', when: l(post.published_at.to_date, format: :short))
+            span.mr10
+              i.glyphicon.glyphicon-user&nbsp;
+              = post.author.username if post.author.present?
+            - if Refinery::Blog::Post.comments_allowed?
+              span.mr10
+                = link_to(refinery.blog_post_path(post) << '#comments') do
+                  i.icon-comment&nbsp;
+                  = post.comments.approved.count
+            - if (tags = post.tags).any?
+              span.mr10
+                i.icon-tag&nbsp;
+                = raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence

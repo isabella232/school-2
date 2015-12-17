@@ -1,0 +1,27 @@
+.container
+  ul.breadcrumb
+    li
+      = link_to root_page.title, refinery.root_path
+    li.active
+      = @page.menu_title
+
+  .titles
+    .pull-left
+      h1.headinglefttitle
+        = @page.menu_title
+    i.icon-comments-alt
+
+  - if @posts.any?
+    row.mt40 id='blog_posts'
+      .col-lg-9.col-md-9.col-sm-12.col-xs-12.mt40column
+        h2.heading1
+          span.maintext= t('blog')
+        #productlist
+          .featureprojectwrap.bloglist
+            ul
+              = render partial: '/refinery/blog/shared/post', collection: @posts
+            = will_paginate @posts
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.mt40column
+        = render '/refinery/blog/shared/body_content_right'
+  - else
+    p= t('.no_blog_articles_yet')
