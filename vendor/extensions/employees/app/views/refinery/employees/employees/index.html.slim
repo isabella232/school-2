@@ -9,9 +9,11 @@
     .pull-left
       h1.headinglefttitle
         = @page.menu_title
-    i.icon-group      
+    i.icon-group
 
   .row.mt40
     .col-lg-12.col-md-12.col-sm-12.col-xs-12
-      .container
-        = render '/refinery/content_page'
+      section.row id='ourteam'
+        ul.thumbnails.clearfix
+          = render @employees
+  .row.mt40        
