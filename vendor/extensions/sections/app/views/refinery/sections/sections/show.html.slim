@@ -1,0 +1,31 @@
+.container
+  ul.breadcrumb
+    li
+      = link_to root_page.title, refinery.root_path
+    li
+      = link_to t('sections'), refinery.sections_sections_path
+    li.active
+      = @section.title
+
+  .titles
+    .pull-left
+      h1.headinglefttitle
+        = @section.title
+    i.fa.fa-puzzle-piece
+
+  .row.mt40
+    .col-lg-9.col-md-9.col-sm-12.col-xs-12.mt40column
+      #blogfullpage
+        .blogdetail
+          h2.heading1
+            span.maintext
+             = @section.title
+          ul.margin-none
+            .listblcok
+              .imagepopup.mb20
+                = image_tag @section.photo_url, alt: @section.title
+              .caption
+                = @section.description.html_safe
+
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12.mt40column
+      = render 'refinery/shared/sidebar'

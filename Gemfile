@@ -26,6 +26,7 @@ gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', bra
 gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 gem 'refinerycms-inquiries', git: 'https://github.com/refinery/refinerycms-inquiries', branch: 'master'
 gem 'refinerycms-employees', path: 'vendor/extensions'
+gem 'refinerycms-sections', path: 'vendor/extensions'
 
 group :development, :test do
   gem 'byebug'

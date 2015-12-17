@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: 建立新的 Section
+            reorder: 对 Sections 重新排序
+            reorder_done: 对 Sections 的重新排序结束
+          records:
+            title: Sections
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Sections yet. Click "Add New Section" to add your first section.
+            no_items_yet: 目前没有 Sections . 点击 "Add New Section" 创建一个section.
+          section:
+            view_live_html: 查看 section 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 section
+            delete: 永久删除 section
+      sections:
+        show:
+          other: 其他 Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

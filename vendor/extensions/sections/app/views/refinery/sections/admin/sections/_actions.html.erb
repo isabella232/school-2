@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::Sections::Admin::SectionsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.sections_admin_sections_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_sections_admin_section_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::Sections::Admin::SectionsController.sortable? && ::Refinery::Sections::Section.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.sections_admin_sections_path,
+                     t('.reorder', what:  "Sections"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.sections_admin_sections_path,
+                      t('.reorder_done', what: "Sections"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

@@ -1,12 +1,1 @@
-li.col-lg-6.col-md-6.col-sm-12.col-xs-12
-  .row
-    .col-lg-4.col-md-4.col-sm-12.col-xs-12
-      .thumbnail
-        = image_tag @employee.photo_url, width: '270px', alt: @employee.full_name
-    .col-lg-8.col-md-8.col-sm-12.col-xs-12
-      p.username
-        = @employee.full_name
-        br
-        span= @employee.post
-        p.mt10
-          = raw @employee.description.truncate(400)
+= render 'employee', employee: @employee

@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+#        article: masculino/femenino
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Crear nuevo section
+            reorder: Reordenar sections
+            reorder_done: Reordenación de sections completada
+          records:
+            title: Sections
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay sections todavía. Pulsa en "Crear nuevo Section" para crear tu primer section.
+          section:
+            view_live_html: Ver este section como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este section
+            delete: Borrar este section para siempre
+      sections:
+        show:
+          other: Otros sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

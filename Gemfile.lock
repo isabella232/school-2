@@ -60,6 +60,9 @@ PATH
     refinerycms-employees (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.0)
+    refinerycms-sections (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -369,6 +372,7 @@ DEPENDENCIES
   refinerycms-employees!
   refinerycms-inquiries!
   refinerycms-portfolio!
+  refinerycms-sections!
   refinerycms-settings (~> 3.0)
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)

@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Aggiungi Nuovo Section
+            reorder: Riordina Sections
+            reorder_done: Termina il Riordino di Sections
+          records:
+            title: Sections
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Sections. Clicca "Aggiungi Nuovo Section" per aggiungere il tuo primo section.
+          section:
+            view_live_html: Guarda live questo section <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo section
+            delete: Rimuovi per sempre questo section
+      sections:
+        show:
+          other: Altri Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

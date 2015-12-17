@@ -20,3 +20,6 @@ Refinery::Portfolio::Engine.load_seed
 
 # Added by Refinery CMS Employees extension
 Refinery::Employees::Engine.load_seed
+
+# Added by Refinery CMS Sections extension
+Refinery::Sections::Engine.load_seed

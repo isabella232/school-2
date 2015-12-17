@@ -1,0 +1,27 @@
+.container
+  ul.breadcrumb
+    li
+      = link_to root_page.title, refinery.root_path
+    li.active
+      = @page.menu_title
+
+  .titles
+    .pull-left
+      h1.headinglefttitle
+        = @page.menu_title
+    i.fa.fa-puzzle-piece
+
+  .row.mt40
+    .col-lg-9.col-md-9.col-sm-12.col-xs-12.mt40column
+      #productlist
+        h2.heading1
+          span.maintext
+            = t('our_sections')
+        .featureprojectwrap.bloglist
+          .mt40
+            = render @sections || t('sorry_no_sections_found')
+
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12.mt40column
+      = render 'refinery/shared/sidebar'
+      
+  .row.mt40

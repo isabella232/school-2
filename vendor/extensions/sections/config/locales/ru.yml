@@ -1,0 +1,32 @@
+ru:
+  refinery:
+    plugins:
+      sections:
+        title: Секции
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Добавить новую секцию
+            reorder: Сортировать секции
+            reorder_done: Завершить сортировку
+          records:
+            title: Секции
+            sorry_no_results: К сожалению, записи не найдены.
+            no_items_yet: Список секции пуст. Нажмите "Добавить новую секцию", чтобы создать новую запись.
+          section:
+            view_live_html: Посмотреть секцию <br/><em>(откроется в новом окне)</em>
+            edit: Редактировать секцию
+            delete: Удалить секцию навсегда
+      sections:
+        show:
+          other: Другие секции
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Заголовок
+        description_short: Краткое описание
+        description: Полное описание
+        photo: Фото
+  our_sections: Наши секции
+  sorry_no_sections_found: К сожалению, секции не найдены.

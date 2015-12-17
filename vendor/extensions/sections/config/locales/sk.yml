@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Pridať Section
+            reorder: Preusporiadať Sections
+            reorder_done: Koniec radenia Sections
+          records:
+            title: Sections
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Sections. Kliknite na "Pridať Section" pre pridanie prvého section.
+          section:
+            view_live_html: Zobraziť náhľad section<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť section
+            delete: Zmazať section
+      sections:
+        show:
+          other: Daľšie Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

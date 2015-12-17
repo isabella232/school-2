@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216140200) do
+ActiveRecord::Schema.define(version: 20151217070912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -313,6 +313,16 @@ ActiveRecord::Schema.define(version: 20151216140200) do
     t.integer  "file_size"
     t.string   "file_uid"
     t.string   "file_ext"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "refinery_sections", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description_short"
+    t.text     "description"
+    t.integer  "photo_id"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

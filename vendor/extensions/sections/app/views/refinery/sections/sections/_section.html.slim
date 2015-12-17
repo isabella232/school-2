@@ -1,0 +1,12 @@
+li.clearfix.mt40
+  .thumbnail
+    .listclear
+      .col-lg-4.col-md-4.col-sm-12.col-xs-12
+        .relativediv
+          = link_to image_tag(section.photo_url, alt: section.title), refinery.sections_section_path(section)
+      .col-lg-8.col-md-8.col-sm-12.col-xs-12
+        .caption
+          h3
+            = link_to section.title, refinery.sections_section_path(section)
+          p
+            = raw section.description_short.truncate(400)

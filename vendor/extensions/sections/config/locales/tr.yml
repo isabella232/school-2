@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Yeni Ekle Section
+            reorder: Tekrar sirala Sections
+            reorder_done: Tekrar siralama tamamlandiSections
+          records:
+            title: Sections
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Sections yok henuz.  Tikla "Yeni Ekle Section" eklemek senin ilk section.
+          section:
+            view_live_html: Bunu canlu section goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle section
+            delete: Bunu Sil section sonsuza dek
+      sections:
+        show:
+          other: Diger Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

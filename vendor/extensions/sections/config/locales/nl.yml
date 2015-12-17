@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Nieuwe Section toevoegen
+            reorder: De volgorde van de Sections wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Section-volgorde
+          records:
+            title: Sections
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Sections. Druk op 'Nieuwe Section toevoegen' om de eerste toe te voegen.
+          section:
+            view_live_html: Deze section op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze section
+            delete: Deze section definitief verwijderen
+      sections:
+        show:
+          other: Andere Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo

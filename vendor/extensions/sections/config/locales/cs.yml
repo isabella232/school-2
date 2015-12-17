@@ -1,0 +1,30 @@
+cs:
+  refinery:
+    plugins:
+      sections:
+        title: Sections
+    sections:
+      admin:
+        sections:
+          actions:
+            create_new: Přidat Section
+            reorder: Řadit Sections
+            reorder_done: Konec řazení Sections
+          records:
+            title: Sections
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Sections. Zvolte "Přidat Section" pro přidání prvního section.
+          section:
+            view_live_html: Zobrazit náhled section<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit section
+            delete: Smazat section
+      sections:
+        show:
+          other: Další Sections
+  activerecord:
+    attributes:
+      'refinery/sections/section':
+        title: Title
+        description_short: Description Short
+        description: Description
+        photo: Photo
