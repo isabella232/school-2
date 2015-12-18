@@ -1,8 +1,9 @@
 - if post.live?
-  li.clearfix id=dom_id(post)
+  li.clearfix.mb30 id=dom_id(post)
     .thumbnail.thumbnail-blog
       .listclear
         .col-lg-12.col-md-12.col-sm-12.col-xs-12
+          h3= link_to post.title, refinery.blog_post_path(post)
           - if blog_post_teaser_enabled?
             = blog_post_teaser(post)
           - else

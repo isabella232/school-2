@@ -1,0 +1,7 @@
+- if @posts.many?
+  h2.heading1
+    span.maintext= t('.other')
+  ul#blog_posts
+    - @posts.each do |blog_post|
+      li.clearfix
+        = link_to blog_post.title, refinery.blog_post_path(blog_post)

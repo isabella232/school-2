@@ -1,0 +1,10 @@
+- if @categories.any?
+  div
+    h2.heading1
+      span.maintext= t('.title')
+    ul.nav.nav-list.categories#categories
+      - @categories.each do |category|
+        li class=('selected' if @category.present? and @category.id == category.id)
+          = link_to refinery.blog_category_path(category) do
+            = category.title
+            span.badge= category.post_count

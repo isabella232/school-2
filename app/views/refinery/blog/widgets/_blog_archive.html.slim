@@ -1,0 +1,6 @@
+div.mt40#blog_archive_widget
+  h2.heading1
+    span.maintext= t('archives', scope: 'refinery.blog.shared')
+  ul
+    - links.each do |link|
+      li= link
