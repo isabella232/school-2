@@ -6,9 +6,18 @@
   margin-bottom: 30px;
 }
 
-#blog_posts {
+#categories  {
   .badge {
     margin-left: 5px;
     background-color: #BAB8B8;
+  }
+  li.selected a {
+    color: #FF9900;
+  }
+}
+
+.tags {
+  a.selected {
+    background-color: #FF9900;
   }
 }

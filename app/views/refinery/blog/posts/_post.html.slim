@@ -1,0 +1,28 @@
+- flash.each do |key, value|
+  #flash class: "flash flash_#{key}"
+    = value
+
+.blogicons
+  .pull-left
+    span.mr10
+      i.icon-calendar&nbsp;
+      = t('created_at', scope: 'refinery.blog.shared.posts', when: l(@post.published_at.to_date, format: :short))
+    span.mr10
+      i.glyphicon.glyphicon-user&nbsp;
+      = @post.author.username if @post.author.present?
+    - if Refinery::Blog::Post.comments_allowed?
+      span.mr10
+        = link_to(refinery.blog_post_path(@post) << '#comments') do
+          i.icon-comment&nbsp;
+          = @post.comments.approved.count
+    - if (tags = @post.tags).any?
+      span.mr10
+        i.icon-tag&nbsp;
+        = raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence
+
+ul.margin-none
+  li.listblcok
+    .imagepopup
+      = @post.body.html_safe
+
+= render 'nav' if next_or_previous?(@post) 

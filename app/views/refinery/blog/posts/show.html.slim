@@ -1,0 +1,26 @@
+.container
+  ul.breadcrumb
+    li
+      = link_to root_page.title, refinery.root_path
+    li
+      = link_to t('blog'), refinery.blog_root_path
+    li.active
+      = @post.title
+
+  .titles
+    .pull-left
+      h1.headinglefttitle
+        = @page.menu_title
+    i.icon-comments-alt
+
+  .row.mt40
+    .col-lg-9.col-md-9.col-sm-12.col-xs-12.mt40column
+      section#blogfullpage
+        .blogdetail
+          h2.heading1
+            span.maintext= @post.title
+          = render 'post'
+          = render 'comments'
+
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12.mt40column
+      = render '/refinery/blog/shared/body_content_right'

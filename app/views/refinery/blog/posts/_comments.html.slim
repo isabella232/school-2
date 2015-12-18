@@ -1,0 +1,44 @@
+- if (comments = @post.comments.approved).any?
+  section.commentsblog
+    h2.heading2
+      span
+        = t('title', scope: 'refinery.blog.posts.show.comments')
+    ul.comments
+      = render partial: 'comment', collection: comments
+
+- if Refinery::Blog::Post.comments_allowed?
+
+  section.leavecomment
+    - flash.each do |key, value|
+      #flash class="flash flash_#{key}"
+        = value
+
+    h2.heading2
+      span
+        = t('add', :scope => 'refinery.blog.posts.show.comments')
+
+    = form_for [refinery, :blog, @comment], class: 'form-inline commentform2' do |f|
+      = render "/refinery/admin/error_messages",
+                     object: f.object,
+                     include_object_name: true
+      fieldset
+        .form-group.mr10
+          = f.label :name, class: 'control-label' do
+            = t('name')
+            span.required *
+          .controls
+            = f.text_field :name, required: true, class: 'required'
+        .form-group.mr10
+          = f.label :email, class: 'control-label' do
+            = t('email')
+            span.required *
+          .controls
+            = f.email_field :email, required: true, class: 'required'
+        .form-group.mr10.mt10
+          = f.label :message, class: 'control-label' do
+            = t('message')
+            span.required *
+          .controls
+            = f.text_area :message, rows: 6, required: true
+        .controls.mt10
+          = f.submit t('submit', :scope => 'refinery.blog.posts.show'), class: 'btn btn-orange'
