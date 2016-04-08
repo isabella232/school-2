@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/webgradus/foreman-export-initscript.git
-  revision: a71cdea54a1b4168a0687d5cad57b21bfe71185b
+  remote: git://github.com/macrocoders/foreman-export-initscript.git
+  revision: b9130ee0daf62a0cbfdb936c1ae50d20963ee80c
   specs:
     foreman-export-initscript (0.0.1)
       foreman
@@ -386,4 +386,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

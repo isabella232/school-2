@@ -45,4 +45,4 @@ group :production do
 end
 
 gem 'foreman'
-gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
+gem 'foreman-export-initscript', github: 'macrocoders/foreman-export-initscript'
