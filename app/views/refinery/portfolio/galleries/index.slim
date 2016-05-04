@@ -1,0 +1,26 @@
+.container 
+  ul.breadcrumb
+    li= link_to root_page.title, refinery.root_path
+    li.active Галерея
+  
+  .titles
+    .pull-left
+      h1.headinglefttitle Галерея
+    i.icon-folder-open 
+
+  .row.mt40
+    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+      .container
+        section.clearfix#options
+          ul#filters.option-set.clearfix data-option-key="filter"
+            - root_galleries.each do |gallery|
+              li= link_to gallery.title, "#filter", data: {'option-value' => ".#{gallery.slug}"}
+        
+        ul#portfoliocontainer.clickable.clearfix.row.column3
+          - root_galleries.each do |gallery|
+            li class="element #{gallery.slug}" data-symbol="Hg" data-category="transition"
+              .thumbnail
+                .relativediv
+                  = link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
+                .caption
+                  = link_to gallery.title, refinery.portfolio_gallery_path(gallery), class: 'portfoliotital'

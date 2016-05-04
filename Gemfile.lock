@@ -6,20 +6,8 @@ GIT
       foreman
 
 GIT
-  remote: https://github.com/macrocoders/refinerycms-portfolio.git
-  revision: d8f4669e38954494cb870234b6996fa881c3f761
-  branch: master
-  specs:
-    refinerycms-portfolio (3.0.0)
-      friendly_id (~> 5.1.0)
-      friendly_id-globalize (>= 1.0.0.alpha2)
-      globalize (>= 4.0.0, < 5.2)
-      refinerycms-acts-as-indexed (~> 2.0.0)
-      refinerycms-core (~> 3.0.0)
-
-GIT
   remote: https://github.com/refinery/refinerycms-acts-as-indexed
-  revision: 935d3b0d9d46b95ac18e2b06bcc86b6566be4f06
+  revision: aa34d3bd5e1eee482aa712125814a99dc2131dcd
   branch: master
   specs:
     refinerycms-acts-as-indexed (2.0.1)
@@ -53,6 +41,16 @@ GIT
       filters_spam (~> 0.2)
       refinerycms-core (~> 3.0.0)
       refinerycms-settings (~> 3.0.0)
+
+PATH
+  remote: /home/forever/projects/refinerycms-portfolio
+  specs:
+    refinerycms-portfolio (3.0.0)
+      friendly_id (~> 5.1.0)
+      friendly_id-globalize (>= 1.0.0.alpha2)
+      globalize (>= 4.0.0, < 5.2)
+      refinerycms-acts-as-indexed (~> 2.0.0)
+      refinerycms-core (~> 3.0.0)
 
 PATH
   remote: vendor/extensions
@@ -110,7 +108,7 @@ GEM
     autoprefixer-rails (6.1.2)
       execjs
       json
-    awesome_nested_set (3.0.2)
+    awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
     babosa (1.0.2)
     bcrypt (3.1.10)
@@ -134,15 +132,15 @@ GEM
     capistrano-rbenv (2.0.3)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    coffee-rails (4.1.0)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
+      railties (>= 4.0.0, < 5.1.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
     colorize (0.7.7)
-    concurrent-ruby (1.0.0)
+    concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     decorators (2.0.1)
       railties (>= 4.0.0, < 5.0.0)
@@ -177,8 +175,8 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (4.0.5)
-      rails-dom-testing (~> 1.0)
+    jquery-rails (4.1.1)
+      rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
@@ -191,12 +189,12 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.99)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
+    minitest (5.8.4)
     multi_json (1.11.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.1)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
@@ -220,9 +218,9 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-i18n (4.0.7)
+    rails-i18n (4.0.8)
       i18n (~> 0.7)
       railties (~> 4.0)
     rails_autolink (1.1.6)
@@ -233,7 +231,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
-    rake (10.4.2)
+    rake (11.1.2)
     refinerycms (3.0.0)
       refinerycms-core (= 3.0.0)
       refinerycms-images (= 3.0.0)
@@ -288,7 +286,7 @@ GEM
     routing-filter (0.5.1)
       actionpack (~> 4.2)
       activesupport (~> 4.2)
-    sass (3.4.20)
+    sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -310,7 +308,7 @@ GEM
     speakingurl-rails (1.1.5)
       railties (>= 3.1)
     spring (1.5.0)
-    sprockets (3.5.2)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
@@ -325,7 +323,7 @@ GEM
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.1)
+    tilt (2.0.2)
     truncate_html (0.9.3)
     turbolinks (2.5.3)
       coffee-rails
@@ -379,6 +377,7 @@ DEPENDENCIES
   seedbank
   slim-rails
   spring
+  sprockets-rails (< 3.0)
   stringex (~> 2.5)
   turbolinks
   uglifier (>= 1.3.0)
