@@ -1,1 +1,30 @@
-= render '/refinery/content_page'
+section.slider
+  .container
+    h2 style='color: red;'
+      | Внимание! Сайт находится на стадии разработки!  
+    #sliderindex3.flexslider
+      ul.slides
+        li= image_tag 'banner2.jpg'
+        li= image_tag 'banner1.jpg'
+        
+.greycontainer.mt40
+  .container 
+    .seodetails
+      h1.headingcenter Lorem ipsum dolor sit amet, consectetur.
+      p.metadetails
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, <br>
+        ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.    
+
+.latestprojectcontianer.container.mt40
+  h2.heading1
+    span.maintext Лучшие секции
+  .latestprojectwrap
+    ul.mt40.latestproject-home2.row
+      - Refinery::Sections::Section.take(4).each do |section|
+        li.col-lg-3.col-xs-6.col-sm-3
+          .thumbnail
+            .relativediv
+              = link_to image_tag(section.photo_url, size: '270x200', alt: section.title), refinery.sections_section_path(section)
+            .caption
+              h3
+                = link_to section.title, refinery.sections_section_path(section)
