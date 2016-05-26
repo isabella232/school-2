@@ -226,7 +226,7 @@ $('.home8').revolution(
 	  
 	  
 // Fancybox 
-	$('a.prettyphotpopup').prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: false, allow_expand: false});	
+//	$('a.prettyphotpopup').prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: false, allow_expand: false});	
 
 
 //  Accrodian	

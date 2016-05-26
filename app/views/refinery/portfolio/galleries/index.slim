@@ -19,16 +19,22 @@
   .row.mt40
     .col-lg-12.col-md-12.col-sm-12.col-xs-12
       .container
-        section.clearfix#options
-          ul#filters.option-set.clearfix data-option-key="filter"
-            - @galleries.each do |gallery|
-              li= link_to gallery.title, "#filter", data: {'option-value' => ".#{gallery.slug}"}
+        - if @galleries.any? 
+          section.clearfix#options
+            ul#filters.option-set.clearfix data-option-key="filter"
+              - @galleries.each do |gallery|
+                li= link_to gallery.title, "#filter", data: {'option-value' => ".#{gallery.slug}"}
         
-        ul#portfoliocontainer.clickable.clearfix.row.column3
-          - @galleries.each do |gallery|
-            li class="element #{gallery.slug}" data-symbol="Hg" data-category="transition"
-              .thumbnail
-                .relativediv
-                  = link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
-                .caption
-                  = link_to gallery.title, refinery.portfolio_gallery_path(gallery), class: 'portfoliotital'
+          ul#portfoliocontainer.clickable.clearfix.row.column3
+            - @galleries.each do |gallery|
+              li class="element #{gallery.slug}" data-symbol="Hg" data-category="transition"
+                .thumbnail
+                  .relativediv
+                    = link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
+                  .caption
+                    = link_to gallery.title, refinery.portfolio_gallery_path(gallery), class: 'portfoliotital'
+        - else
+          ul#portfoliocontainer.row.column4
+            - @items.each do |item|
+              li.element.html5.simple.css3
+                = link_to image_tag(item.image.url, class: 'img-responsive'), item.image.url, class: 'fancybox', rel: 'gallery'

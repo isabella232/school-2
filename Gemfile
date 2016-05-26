@@ -17,6 +17,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'seedbank'
 gem 'stringex', '~> 2.5'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 gem 'refinerycms', '~> 3.0'
 gem 'refinerycms-settings', '~> 3.0'

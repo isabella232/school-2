@@ -4,3 +4,5 @@
 //= require_tree ../../../vendor/assets/javascripts/frontend/.
 //= require custom
 //= require custom2
+//= require fancybox
+//= require gallery
