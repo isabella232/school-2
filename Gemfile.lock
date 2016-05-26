@@ -6,6 +6,18 @@ GIT
       foreman
 
 GIT
+  remote: https://github.com/macrocoders/refinerycms-portfolio.git
+  revision: d8f4669e38954494cb870234b6996fa881c3f761
+  branch: master
+  specs:
+    refinerycms-portfolio (3.0.0)
+      friendly_id (~> 5.1.0)
+      friendly_id-globalize (>= 1.0.0.alpha2)
+      globalize (>= 4.0.0, < 5.2)
+      refinerycms-acts-as-indexed (~> 2.0.0)
+      refinerycms-core (~> 3.0.0)
+
+GIT
   remote: https://github.com/refinery/refinerycms-acts-as-indexed
   revision: aa34d3bd5e1eee482aa712125814a99dc2131dcd
   branch: master
@@ -41,16 +53,6 @@ GIT
       filters_spam (~> 0.2)
       refinerycms-core (~> 3.0.0)
       refinerycms-settings (~> 3.0.0)
-
-PATH
-  remote: /home/forever/projects/refinerycms-portfolio
-  specs:
-    refinerycms-portfolio (3.0.0)
-      friendly_id (~> 5.1.0)
-      friendly_id-globalize (>= 1.0.0.alpha2)
-      globalize (>= 4.0.0, < 5.2)
-      refinerycms-acts-as-indexed (~> 2.0.0)
-      refinerycms-core (~> 3.0.0)
 
 PATH
   remote: vendor/extensions
