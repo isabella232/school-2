@@ -8,6 +8,7 @@ module Refinery
       
       belongs_to :photo, class_name: '::Refinery::Image'
       belongs_to :section, class_name: 'Refinery::Sections::Section'
+      belongs_to :coach, class_name: 'Refinery::Employees::Employee', foreign_key: 'employee_id'
 
       def full_name
         [last_name, first_name, middle_name].join ' '
