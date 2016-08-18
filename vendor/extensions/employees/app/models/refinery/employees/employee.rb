@@ -18,7 +18,7 @@ module Refinery
       end
 
       def photo_url
-        photo.present? ? photo.url : 'no_image_available.png'
+        photo.present? ? photo.url : 'no_picture.jpg'
       end
     end
   end
