@@ -1,11 +1,48 @@
-<% content_for :body do %>
-  <ul id="students">
-    <% @students.each do |student| %>
-      <li>
-        <%= link_to student.first_name, refinery.students_student_path(student) %>
-      </li>
-    <% end %>
+<div class="container"> 
+  <!--  breadcrumb -->
+  <ul class="breadcrumb">
+    <li><%= link_to root_page.title, refinery.root_path %></li>
+    <li class="active"> <%= @page.menu_title %></li>
   </ul>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+  <!-- Main Title-->
+  <div class="titles">
+    <div class="pull-left">
+      <h1 class="headinglefttitle"><%= @page.menu_title %></h1>
+      <div class="headingsubtitle">Список спортсменов и тренеров, занесенных на Доску почёта «Молодое Поколение – гордость Глазова» ДЮСШ № 1 за 2014-2015 учебный год. </div>
+    </div>
+    <i class="icon-folder-open-alt"></i> </div>
+  <div class="row mt40">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="container">
+      <!-- Options-->
+        <section id="options" class="clearfix">
+          <ul id="filters" class="option-set clearfix" data-option-key="filter">
+            <li><a href="#filter" data-option-value="*" class="selected">Показать все</a></li>
+            <% @sections.each do |section| %>
+              <li><a href="#filter" data-option-value=".section<%= section.id %>"><%= section.title %></a></li>
+            <% end %>
+          </ul>
+        </section>
+         <!-- Portfolio-->
+        <ul id="portfoliocontainer" class="clickable clearfix row column4">
+          <% @students.each do |student| %>      
+            <li class='element <%= "section#{student.section.id}" %>' data-symbol="Hg" data-category="transition">
+              <div class="thumbnail">
+                <div class="relativediv">
+                  <%= image_tag student.photo_url, alt: student.full_name %>
+                </div>
+                <div class="caption"> 
+                  <a class="portfoliotital" href=""><%= student.full_name %></a> 
+                  <span class="mr10">
+                    <i class="icon-tag"></i>
+                    <%= raw student.description %>
+                  </span> 
+                </div>
+              </div>
+            </li>
+          <% end %>  
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

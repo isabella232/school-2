@@ -1,0 +1,32 @@
+ru:
+  refinery:
+    plugins:
+      students:
+        title: Студенты
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Добавить нового 
+            reorder: Сортировать  
+            reorder_done: Завершить сортировку
+          records:
+            title: Студенты
+            sorry_no_results: К сожалению записи не найдены.
+            no_items_yet: Вы ещё не вводили студентов. Нажмите "Добавить" чтобы добавить нового.
+          student:
+            view_live_html: Просмотреть <br/><em>(откроется в новом окне)</em>
+            edit: Редактировать
+            delete: Удалить
+      students:
+        show:
+          other: Другие
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: Имя
+        middle_name: Отчество
+        last_name: Фамилия
+        photo_id: Фото
+        section_id: Секция
+        description: Описание

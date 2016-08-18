@@ -9,23 +9,27 @@
   </div>
 
   <div class='field'>
+    <%= f.label :last_name -%>
+    <%= f.text_field :last_name -%>
+  </div>
+  
+  <div class='field'>
     <%= f.label :middle_name -%>
     <%= f.text_field :middle_name -%>
   </div>
 
   <div class='field'>
-    <%= f.label :last_name -%>
-    <%= f.text_field :last_name -%>
-  </div>
-
-  <div class='field'>
-    <%= f.label :photo_id -%>
-    <%= f.number_field :photo_id -%>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @student.photo,
+               :toggle_image_display => false -%>
   </div>
 
   <div class='field'>
     <%= f.label :section_id -%>
-    <%= f.number_field :section_id -%>
+    <%= f.select :section_id, Refinery::Sections::Section.all.collect { |s| [ s.title, s.id ] } -%>
   </div>
 
   <div class='field'>

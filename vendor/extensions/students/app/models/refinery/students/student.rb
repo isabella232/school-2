@@ -3,13 +3,19 @@ module Refinery
     class Student < Refinery::Core::BaseModel
       self.table_name = 'refinery_students'
 
+      validates :first_name, presence: true
+      validates :last_name, presence: true
+      
+      belongs_to :photo, class_name: '::Refinery::Image'
+      belongs_to :section, class_name: 'Refinery::Sections::Section'
 
-      validates :first_name, :presence => true, :uniqueness => true
-
-      # To enable admin searching, add acts_as_indexed on searchable fields, for example:
-      #
-      #   acts_as_indexed :fields => [:title]
-
+      def full_name
+        [last_name, first_name, middle_name].join ' '
+      end
+      
+      def photo_url
+        photo.present? ? photo.url : 'no_picture.jpg'
+      end
     end
   end
 end
