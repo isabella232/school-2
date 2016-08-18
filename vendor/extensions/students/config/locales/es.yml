@@ -1,0 +1,33 @@
+es:
+  refinery:
+    plugins:
+      students:
+        title: Students
+#        article: masculino/femenino
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Crear nuevo student
+            reorder: Reordenar students
+            reorder_done: Reordenación de students completada
+          records:
+            title: Students
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay students todavía. Pulsa en "Crear nuevo Student" para crear tu primer student.
+          student:
+            view_live_html: Ver este student como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este student
+            delete: Borrar este student para siempre
+      students:
+        show:
+          other: Otros students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

@@ -1,0 +1,32 @@
+tr:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Yeni Ekle Student
+            reorder: Tekrar sirala Students
+            reorder_done: Tekrar siralama tamamlandiStudents
+          records:
+            title: Students
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Students yok henuz.  Tikla "Yeni Ekle Student" eklemek senin ilk student.
+          student:
+            view_live_html: Bunu canlu student goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle student
+            delete: Bunu Sil student sonsuza dek
+      students:
+        show:
+          other: Diger Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

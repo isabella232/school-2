@@ -1,0 +1,32 @@
+it:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Aggiungi Nuovo Student
+            reorder: Riordina Students
+            reorder_done: Termina il Riordino di Students
+          records:
+            title: Students
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Students. Clicca "Aggiungi Nuovo Student" per aggiungere il tuo primo student.
+          student:
+            view_live_html: Guarda live questo student <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo student
+            delete: Rimuovi per sempre questo student
+      students:
+        show:
+          other: Altri Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

@@ -1,0 +1,32 @@
+nl:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Nieuwe Student toevoegen
+            reorder: De volgorde van de Students wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Student-volgorde
+          records:
+            title: Students
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Students. Druk op 'Nieuwe Student toevoegen' om de eerste toe te voegen.
+          student:
+            view_live_html: Deze student op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze student
+            delete: Deze student definitief verwijderen
+      students:
+        show:
+          other: Andere Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

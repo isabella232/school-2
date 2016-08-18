@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Student
+            reorder: Réordonner les Students
+            reorder_done: Fin de réordonnancement des Students
+          records:
+            title: Students
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Student. Cliquer sur "Créer un(e) nouve(au/l/lle) Student" pour créer votre premi(er/ère) student.'
+          student:
+            view_live_html: Voir ce(t/tte) student <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) student
+            delete: Supprimer définitivement ce(t/tte) student
+      students:
+        show:
+          other: Autres Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

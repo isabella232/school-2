@@ -1,0 +1,32 @@
+cs:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Přidat Student
+            reorder: Řadit Students
+            reorder_done: Konec řazení Students
+          records:
+            title: Students
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Students. Zvolte "Přidat Student" pro přidání prvního student.
+          student:
+            view_live_html: Zobrazit náhled student<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit student
+            delete: Smazat student
+      students:
+        show:
+          other: Další Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description

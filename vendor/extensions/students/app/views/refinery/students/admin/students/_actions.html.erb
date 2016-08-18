@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::Students::Admin::StudentsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.students_admin_students_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_students_admin_student_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::Students::Admin::StudentsController.sortable? && ::Refinery::Students::Student.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.students_admin_students_path,
+                     t('.reorder', what:  "Students"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.students_admin_students_path,
+                      t('.reorder_done', what: "Students"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

@@ -23,3 +23,6 @@ Refinery::Employees::Engine.load_seed
 
 # Added by Refinery CMS Sections extension
 Refinery::Sections::Engine.load_seed
+
+# Added by Refinery CMS Students extension
+Refinery::Students::Engine.load_seed

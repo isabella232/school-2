@@ -49,3 +49,5 @@ end
 
 gem 'foreman'
 gem 'foreman-export-initscript', github: 'macrocoders/foreman-export-initscript'
+
+gem 'refinerycms-students', path: 'vendor/extensions'

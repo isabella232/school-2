@@ -1,0 +1,32 @@
+nb:
+  refinery:
+    plugins:
+      students:
+        title: Students
+    students:
+      admin:
+        students:
+          actions:
+            create_new: Lag en ny Student
+            reorder: Endre rekkefølgen på Students
+            reorder_done: Ferdig å endre rekkefølgen Students
+          records:
+            title: Students
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Students enda. Klikk på "Lag en ny Student" for å legge til din første student.
+          student:
+            view_live_html: Vis hvordan denne student ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne student
+            delete: Fjern denne student permanent
+      students:
+        show:
+          other: Andre Students
+  activerecord:
+    attributes:
+      'refinery/students/student':
+        first_name: First Name
+        middle_name: Middle Name
+        last_name: Last Name
+        photo_id: Photo
+        section_id: Section
+        description: Description
