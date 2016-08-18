@@ -1,10 +1,26 @@
 fr:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Role
+            reorder: Réordonner les Roles
+            reorder_done: Fin de réordonnancement des Roles
+          records:
+            title: Roles
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Role. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Role" pour créer votre premi(er/ère) role.
+          role:
+            view_live_html: Voir ce(t/tte) role <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) role
+            delete: Supprimer définitivement ce(t/tte) role
         employees:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Employee
@@ -12,18 +28,24 @@ fr:
             reorder_done: Fin de réordonnancement des Employees
           records:
             title: Employees
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Employee. Cliquer sur "Créer un(e) nouve(au/l/lle) Employee" pour créer votre premi(er/ère) employee.'
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Employee. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Employee" pour créer votre premi(er/ère) employee.
           employee:
             view_live_html: Voir ce(t/tte) employee <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) employee
             delete: Supprimer définitivement ce(t/tte) employee
+      roles:
+        show:
+          other: Autres Roles
       employees:
         show:
           other: Autres Employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

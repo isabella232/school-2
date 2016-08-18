@@ -1,29 +1,51 @@
 cs:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Přidat Role
+            reorder: "Řadit Roles"
+            reorder_done: Konec řazení Roles
+          records:
+            title: Roles
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Roles. Zvolte "Přidat Role"
+              pro přidání prvního role.
+          role:
+            view_live_html: Zobrazit náhled role<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit role
+            delete: Smazat role
         employees:
           actions:
             create_new: Přidat Employee
-            reorder: Řadit Employees
+            reorder: "Řadit Employees"
             reorder_done: Konec řazení Employees
           records:
             title: Employees
             sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
-            no_items_yet: Zatím nebyly vytvořeny žádné Employees. Zvolte "Přidat Employee" pro přidání prvního employee.
+            no_items_yet: Zatím nebyly vytvořeny žádné Employees. Zvolte "Přidat Employee"
+              pro přidání prvního employee.
           employee:
             view_live_html: Zobrazit náhled employee<br/><em>(otevře se v novém okně)</em>
             edit: Upravit employee
             delete: Smazat employee
+      roles:
+        show:
+          other: Další Roles
       employees:
         show:
           other: Další Employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

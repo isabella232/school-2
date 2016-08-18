@@ -1,11 +1,27 @@
 es:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
-#        article: masculino/femenino
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Crear nuevo role
+            reorder: Reordenar roles
+            reorder_done: Reordenación de roles completada
+          records:
+            title: Roles
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay roles todavía. Pulsa en "Crear nuevo Role" para crear
+              tu primer role.
+          role:
+            view_live_html: Ver este role como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este role
+            delete: Borrar este role para siempre
         employees:
           actions:
             create_new: Crear nuevo employee
@@ -14,17 +30,24 @@ es:
           records:
             title: Employees
             sorry_no_results: Lo siento, no hay resultados
-            no_items_yet: No hay employees todavía. Pulsa en "Crear nuevo Employee" para crear tu primer employee.
+            no_items_yet: No hay employees todavía. Pulsa en "Crear nuevo Employee"
+              para crear tu primer employee.
           employee:
-            view_live_html: Ver este employee como abierto al público <br/><em>(abre en ventana nueva)</em>
+            view_live_html: Ver este employee como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
             edit: Editar este employee
             delete: Borrar este employee para siempre
+      roles:
+        show:
+          other: Otros roles
       employees:
         show:
           other: Otros employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

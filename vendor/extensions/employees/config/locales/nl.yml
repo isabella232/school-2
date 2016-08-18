@@ -1,10 +1,27 @@
 nl:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Nieuwe Role toevoegen
+            reorder: De volgorde van de Roles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Role-volgorde
+          records:
+            title: Roles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Roles. Druk op 'Nieuwe Role toevoegen'
+              om de eerste toe te voegen.
+          role:
+            view_live_html: Deze role op de website bekijken <br/><em>(opent in een
+              nieuw venster)</em>
+            edit: Bewerk deze role
+            delete: Deze role definitief verwijderen
         employees:
           actions:
             create_new: Nieuwe Employee toevoegen
@@ -13,17 +30,24 @@ nl:
           records:
             title: Employees
             sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-            no_items_yet: Er zijn nog geen Employees. Druk op 'Nieuwe Employee toevoegen' om de eerste toe te voegen.
+            no_items_yet: Er zijn nog geen Employees. Druk op 'Nieuwe Employee toevoegen'
+              om de eerste toe te voegen.
           employee:
-            view_live_html: Deze employee op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            view_live_html: Deze employee op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
             edit: Bewerk deze employee
             delete: Deze employee definitief verwijderen
+      roles:
+        show:
+          other: Andere Roles
       employees:
         show:
           other: Andere Employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

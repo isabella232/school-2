@@ -1,10 +1,27 @@
 tr:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Yeni Ekle Role
+            reorder: Tekrar sirala Roles
+            reorder_done: Tekrar siralama tamamlandiRoles
+          records:
+            title: Roles
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Roles yok henuz.  Tikla "Yeni Ekle Role" eklemek
+              senin ilk role.
+          role:
+            view_live_html: Bunu canlu role goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle role
+            delete: Bunu Sil role sonsuza dek
         employees:
           actions:
             create_new: Yeni Ekle Employee
@@ -13,17 +30,24 @@ tr:
           records:
             title: Employees
             sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
-            no_items_yet: Herhangi bir Employees yok henuz.  Tikla "Yeni Ekle Employee" eklemek senin ilk employee.
+            no_items_yet: Herhangi bir Employees yok henuz.  Tikla "Yeni Ekle Employee"
+              eklemek senin ilk employee.
           employee:
-            view_live_html: Bunu canlu employee goruntule <br/><em>(yeni bir pencerede acar)</em>
+            view_live_html: Bunu canlu employee goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
             edit: Bunu Duzenle employee
             delete: Bunu Sil employee sonsuza dek
+      roles:
+        show:
+          other: Diger Roles
       employees:
         show:
           other: Diger Employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

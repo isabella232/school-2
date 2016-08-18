@@ -1,10 +1,27 @@
 nb:
   refinery:
     plugins:
+      roles:
+        title: Roles
       employees:
         title: Employees
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Lag en ny Role
+            reorder: Endre rekkefølgen på Roles
+            reorder_done: Ferdig å endre rekkefølgen Roles
+          records:
+            title: Roles
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Roles enda. Klikk på "Lag en ny Role" for å
+              legge til din første role.
+          role:
+            view_live_html: Vis hvordan denne role ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne role
+            delete: Fjern denne role permanent
         employees:
           actions:
             create_new: Lag en ny Employee
@@ -13,17 +30,24 @@ nb:
           records:
             title: Employees
             sorry_no_results: Beklager! Vi fant ikke noen resultater.
-            no_items_yet: Det er ingen Employees enda. Klikk på "Lag en ny Employee" for å legge til din første employee.
+            no_items_yet: Det er ingen Employees enda. Klikk på "Lag en ny Employee"
+              for å legge til din første employee.
           employee:
-            view_live_html: Vis hvordan denne employee ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            view_live_html: Vis hvordan denne employee ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
             edit: Rediger denne employee
             delete: Fjern denne employee permanent
+      roles:
+        show:
+          other: Andre Roles
       employees:
         show:
           other: Andre Employees
   activerecord:
     attributes:
-      'refinery/employees/employee':
+      refinery/employees/role:
+        title: Title
+      refinery/employees/employee:
         first_name: First Name
         middle_name: Middle Name
         last_name: Last Name

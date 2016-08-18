@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="roles">
+    <% @roles.each do |role| %>
+      <li>
+        <%= link_to role.title, refinery.employees_role_path(role) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

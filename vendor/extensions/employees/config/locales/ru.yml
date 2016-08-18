@@ -1,10 +1,25 @@
 ru:
   refinery:
     plugins:
+      roles:
+        title: Должности
       employees:
         title: Сотрудники
     employees:
       admin:
+        roles:
+          actions:
+            create_new: Добавить должность
+            reorder: Сортировать
+            reorder_done: Завершить сортировку
+          records:
+            title: Роли
+            sorry_no_results: Записи не найдены.
+            no_items_yet: Записи не найдены. Нажмите "Добавить новую" чтобы добавить новую должность
+          role:
+            view_live_html: Просмотреть <br/><em>(откроется в новом окне)</em>
+            edit: Редактировать должность
+            delete: Удалить должность
         employees:
           actions:
             create_new: Добавить сотрудника
@@ -18,11 +33,16 @@ ru:
             view_live_html: Посмотреть запись в отдельном окне <br/><em>(открыть в новом окне)</em>
             edit: Редактировать
             delete: Удалить запись навсегда
+      roles:
+        show:
+          other: Другие роли
       employees:
         show:
           other: Другие сотрудники
   activerecord:
     attributes:
+      refinery/employees/role:
+        title: Название
       'refinery/employees/employee':
         first_name: Имя
         middle_name: Отчество
