@@ -1,0 +1,41 @@
+<div class="container"> 
+  <!--  breadcrumb -->
+  <ul class="breadcrumb">
+    <li><%= link_to root_page.title, refinery.root_path %></li>
+    <li class="active"> <%= @page.menu_title %></li>
+  </ul>
+  <!-- Main Title-->
+  <div class="titles">
+    <div class="pull-left">
+      <h1 class="headinglefttitle"> Контакты</h1>
+      <div class="headingsubtitle"></div> 
+    </div>
+    <i class="icon-map-marker"></i> </div>        
+      <div class="row mt40">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <!--Map-->
+      <section id="contactmap" class="map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=g1DMiet_hvw4AWQbUVlcTZTKxUTOBGuw&amp;width=350&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+      </section>
+      </div>
+      <!--Contact Address-->                  
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <aside>
+            <div class="sidewidt">
+              <h2 class="heading2"><span> <i class="icon-envelope"></i> Контактная информация</span></h2>
+               <div class="contactlinks">
+                <i class="icon-phone"></i> <strong>Телефон</strong>: (012) 333-7890<br>
+                <i class="icon-phone"></i> <strong>Факс</strong>: (123) 444-7890<br>
+                <i class="icon-envelope"></i> <strong>Email</strong>: test@contactus.com<br>
+                <i class="icon-globe"></i> <strong>Сайт</strong>: yourcompanyname.com<br>
+                </div>
+              
+            </div>
+          </aside>
+        </div>
+       <!--Contact Form-->
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <%= render 'form', inquiry: @inquiry %>    
+      </div>     
+   </div>
+</div>  

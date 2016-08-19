@@ -1,0 +1,48 @@
+<%= form_for [refinery, :inquiries, inquiry], clas: "form-horizontal contactform" do |f| %>
+<fieldset>
+  <%= render :partial => "/refinery/admin/error_messages",
+             :locals => {
+               :object => inquiry,
+               :include_object_name => true
+             } %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label required' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text', :required => 'required',
+        :placeholder => (t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+    </div>    
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label required' %>
+    <div class="controls">
+      <%= f.email_field :email, :class => 'text email', :required => 'required',
+        :placeholder => (t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+    </div>    
+  </div>
+
+  <% if Refinery::Inquiries.show_phone_number_field %>
+    <div class="control-group">
+      <%= f.label :phone, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :phone, :class => 'text phone',
+          :placeholder => (t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+      </div>    
+    </div>
+  <% end %>
+
+  <div class='control-group'>
+    <%= f.label :message, :class => 'control-label required' %>
+    <div class="controls">
+      <%= f.text_area :message, :rows => 4, :required => 'required',
+        :placeholder => (t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+    </div>    
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit t('.send'), class: 'btn btn-orange' %>
+  </div>
+
+</fieldset>  
+<% end %>
