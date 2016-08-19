@@ -11,6 +11,7 @@ module Refinery
       belongs_to :photo, class_name: '::Refinery::Image'
       
       scope :coaches, -> {joins(:role).where("refinery_employees_roles.title = 'Тренер'")}
+      scope :administration, -> {joins(:role).where("refinery_employees_roles.title != 'Тренер'")}
       
       def full_name
         [last_name, first_name, middle_name].join ' '
