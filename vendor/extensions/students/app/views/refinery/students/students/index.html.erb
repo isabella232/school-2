@@ -24,19 +24,16 @@
           </ul>
         </section>
          <!-- Portfolio-->
-        <ul id="portfoliocontainer" class="clickable clearfix row column4">
+        <ul id="portfoliocontainer" class="clickable clearfix row column5 best-students">
           <% @students.each do |student| %>      
             <li class='element <%= "section#{student.section.id}" %>' data-symbol="Hg" data-category="transition">
               <div class="thumbnail">
-                <div class="relativediv">
-                  <%= image_tag student.photo_url, alt: student.full_name %>
+                <div class='img-thumbnail'>
+                  <%= link_to (image_tag student.photo_url, alt: student.full_name, class: 'img-rounded'), refinery.students_student_path(student), remote: true  %>
                 </div>
                 <div class="caption"> 
-                  <a class="portfoliotital" href=""><%= student.full_name %></a> 
-                  <span class="mr10">
-                    <i class="icon-tag"></i>
-                    <%= raw student.description %>
-                  </span> 
+                  <%= link_to student.full_name, refinery.students_student_path(student), remote: true, class: "portfoliotital" %> 
+                  <strong><%= student.section.title %></strong> 
                 </div>
               </div>
             </li>
@@ -46,3 +43,5 @@
     </div>
   </div>
 </div>
+<div id='student-info'>
+</div>  

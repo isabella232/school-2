@@ -10,7 +10,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def employee_params
-          params.require(:employee).permit(:first_name, :middle_name, :last_name, :photo_id, :post, :description)
+          params.require(:employee).permit(:first_name, :middle_name, :last_name, :photo_id, :description, :role_id)
         end
       end
     end

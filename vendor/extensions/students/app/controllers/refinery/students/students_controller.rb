@@ -15,9 +15,10 @@ module Refinery
       def show
         @student = Student.find(params[:id])
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @student in the line below:
-        present(@page)
+        respond_to do |format|
+          format.js
+          format.html { present(@page) }
+        end  
       end
 
     protected

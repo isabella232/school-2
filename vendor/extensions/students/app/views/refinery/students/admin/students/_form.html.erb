@@ -31,6 +31,11 @@
     <%= f.label :section_id -%>
     <%= f.select :section_id, Refinery::Sections::Section.all.collect { |s| [ s.title, s.id ] } -%>
   </div>
+  
+  <div class='field'>
+    <%= f.label :employee_id -%>
+    <%= f.select :employee_id, Refinery::Employees::Employee.coaches.collect { |e| [ e.full_name, e.id ] } -%>
+  </div>
 
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',

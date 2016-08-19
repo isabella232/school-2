@@ -1,0 +1,19 @@
+<div id="student-info-modal" >
+    <div class="col-sm-12">
+      <div class='col-sm-6'>
+        <%= image_tag(student.photo_url, class: "img-rounded img-responsive")%>
+      </div>
+      <div class='col-sm-6'>
+        <div class="text-center">
+          <h1><%= student.full_name %></h1>
+        </div>
+        <div style='font-size: 16px;'>
+          <strong>Секция:</strong> <%= student.section.title %></br>
+          <strong>Тренер:</strong> <%= student.coach.full_name %></br>
+          <div>
+            <%= raw student.description %>
+          </div>
+        </div>   
+      </div>  
+    </div>  
+</div>

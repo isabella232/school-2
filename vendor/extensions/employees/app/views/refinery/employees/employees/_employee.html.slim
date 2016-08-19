@@ -7,6 +7,6 @@ li.col-lg-6.col-md-6.col-sm-12.col-xs-12.employe-thumb
       p.username
         = employee.full_name
         br
-        span= employee.post
+        span= employee.role.title
         p.mt10
           = raw employee.description.truncate(300)

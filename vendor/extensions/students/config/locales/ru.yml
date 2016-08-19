@@ -29,4 +29,5 @@ ru:
         last_name: Фамилия
         photo_id: Фото
         section_id: Секция
+        employee_id: Тренер
         description: Описание

@@ -5,16 +5,19 @@ module Refinery
 
       validates :first_name, presence: true
       validates :last_name, presence: true
-      validates :post, presence: true
-
+      validates :role_id, presence: true
+      
+      belongs_to :role, class_name: 'Refinery::Employees::Role'
       belongs_to :photo, class_name: '::Refinery::Image'
-
+      
+      scope :coaches, -> {joins(:role).where("refinery_employees_roles.title = 'Тренер'")}
+      
       def full_name
         [last_name, first_name, middle_name].join ' '
       end
 
       def title
-        [full_name, post].join ', '
+        [full_name, role.try(:title)].join ', '
       end
 
       def photo_url

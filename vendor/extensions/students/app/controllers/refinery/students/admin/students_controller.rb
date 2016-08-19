@@ -10,7 +10,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def student_params
-          params.require(:student).permit(:first_name, :middle_name, :last_name, :photo_id, :section_id, :description)
+          params.require(:student).permit(:first_name, :middle_name, :last_name, :photo_id, :section_id, :description, :employee_id)
         end
       end
     end

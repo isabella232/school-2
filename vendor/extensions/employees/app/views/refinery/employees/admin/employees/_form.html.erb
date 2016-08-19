@@ -28,8 +28,8 @@
   </div>
 
   <div class='field'>
-    <%= f.label :post -%>
-    <%= f.text_field :post -%>
+    <%= f.label :role -%>
+    <%= f.select :role_id,  Refinery::Employees::Role.all.collect { |r| [ r.title, r.id ] }   -%>
   </div>
 
   <div class='field'>
