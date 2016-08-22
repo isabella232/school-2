@@ -52,3 +52,5 @@ ru:
         description: Описание
         work_experience: Стаж работы
         category: Категория
+        role_id: Должность
+        section_id: Секция

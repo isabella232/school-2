@@ -8,10 +8,11 @@ module Refinery
       validates :role_id, presence: true
       
       belongs_to :role, class_name: 'Refinery::Employees::Role'
+      belongs_to :section, class_name: 'Refinery::Sections::Section'
       belongs_to :photo, class_name: '::Refinery::Image'
       
-      scope :coaches, -> {joins(:role).where("refinery_employees_roles.title = 'Тренер'")}
-      scope :administration, -> {joins(:role).where("refinery_employees_roles.title != 'Тренер'")}
+      scope :coaches, -> {joins(:role).where("refinery_employees_roles.title = 'Тренер-преподаватель'")}
+      scope :administration, -> {joins(:role).where("refinery_employees_roles.title != 'Тренер-преподаватель'")}
       
       CATEGORIES = ['Высшая', 'Первая']
       
