@@ -31,6 +31,16 @@
     <%= f.label :role -%>
     <%= f.select :role_id,  Refinery::Employees::Role.all.collect { |r| [ r.title, r.id ] }   -%>
   </div>
+  
+  <div class='field'>
+    <%= f.label :work_experience -%>
+    <%= f.number_field :work_experience -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :category -%>
+    <%= f.select :category, Refinery::Employees::Employee::CATEGORIES, include_blank: true -%>
+  </div>
 
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',

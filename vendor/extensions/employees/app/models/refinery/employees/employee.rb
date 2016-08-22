@@ -13,6 +13,8 @@ module Refinery
       scope :coaches, -> {joins(:role).where("refinery_employees_roles.title = 'Тренер'")}
       scope :administration, -> {joins(:role).where("refinery_employees_roles.title != 'Тренер'")}
       
+      CATEGORIES = ['Высшая', 'Первая']
+      
       def full_name
         [last_name, first_name, middle_name].join ' '
       end
