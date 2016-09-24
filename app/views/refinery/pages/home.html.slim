@@ -52,16 +52,22 @@ section.slider
       | Text 6  
     
 
-.latestprojectcontianer.container.mt40
-  h2.heading1
-    span.maintext Лучшие секции
-  .latestprojectwrap
-    ul.mt40.latestproject-home2.row
-      - Refinery::Sections::Section.take(4).each do |section|
-        li.col-lg-3.col-xs-6.col-sm-3
-          .thumbnail
-            .relativediv
-              = link_to image_tag(section.photo_url, size: '270x200', alt: section.title), refinery.sections_section_path(section)
-            .caption
-              h3
-                = link_to section.title, refinery.sections_section_path(section)
+.greycontainer.mt40
+  .latestprojectcontianer.container.mt40
+    h2.heading1
+      span.maintext Наши секции
+    .column4.carousel
+      ul.mt40.slides
+        - Refinery::Sections::Section.all.each do |section|
+          li
+            .thumbnail
+              .relativediv
+                = image_tag section.photo_url, alt: section.title, style: 'max-height: 198px;'
+                .viewicons
+                  = link_to section.photo_url, class: 'tooltip-test prettyphotpopup', 'data-original-title': 'View' do
+                    i.icon-search
+                  = link_to refinery.sections_section_path(section), class: 'tooltip-test', 'data-original-title': 'Link' do
+                    i.icon-link
+              .caption  
+                h3
+                  = link_to  section.title, refinery.sections_section_path(section)
