@@ -1,11 +1,19 @@
 section.slider
   .container
-    h2 style='color: red;'
-      | Внимание! Сайт находится на стадии разработки!  
-    #sliderindex3.flexslider
-      ul.slides
-        li= image_tag 'banner2.jpg'
-        li= image_tag 'banner1.jpg'
+    .html_carousel
+      #mainslider2
+        .slide
+          = image_tag 'banner2.jpg'
+          div
+            h4 Slider 1
+            p Text1
+        .slide
+          = image_tag 'banner1.jpg'
+          div
+            h4 Slider 2
+            p Text2     
+      .clearfix
+      .thumbnails#mainslider2_pag       
         
 .greycontainer.mt40
   .container 

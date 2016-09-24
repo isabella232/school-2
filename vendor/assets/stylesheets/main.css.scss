@@ -406,7 +406,7 @@ html[xmlns] .slides { display: block; }
 /* ------------ Carousal Common ------------ */
 
 .html_carousel div.slide { position: relative; }
-.html_carousel div.slide div { background: url(../img/singplepx.png) repeat 0 0; width: 30%; position: absolute; bottom: 20px; left:20px; padding:20px }
+.html_carousel div.slide div { background: asset-url('singplepx.png') repeat 0 0; width: 30%; position: absolute; bottom: 20px; left:20px; padding:20px }
 .html_carousel div.slide h4 { font-size: 28px; padding: 0 0 10px 0; }
 .html_carousel div.slide p { font-size: 14px; padding: 0; }
 .html_carousel div.slide h4, .html_carousel div.slide p { color: white; margin: 0; }
@@ -1157,5 +1157,5 @@ body { font-size: 12px; }
 /* You can add ratina background images css here.*/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-.html_carousel div.slide div { background-image: url("../img/singplepx@2x.png"); background-size: 1px 1px; }
+.html_carousel div.slide div { background-image: asset-url("singplepx@2x.png"); background-size: 1px 1px; }
 }
