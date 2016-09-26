@@ -23,34 +23,6 @@ section.slider
         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, <br>
         ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.
 
-
-/.container.mt40
-/  ul.features.row
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-html5.font60
-/      <br>
-/      | Text 1
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-twitter.font60
-/      <br>
-/      | Text 2
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-gift.font60
-/      <br>
-/      | Text 3      
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-flag.font60
-/      <br>
-/      | Text 4  
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-css3.font60
-/      <br>
-/      | Text 5  
-/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-/      i.icon-thumbs-up.font60
-/      <br>
-/      | Text 6
-
 .container.mt40
   h2.heading1
     span.maintext Как записаться в секцию
@@ -136,6 +108,25 @@ section.slider
               = post.custom_teaser.html_safe
               = link_to 'Читать', refinery.blog_post_path(post), class: "btn btn-orange btn-small pull-right"
 
-            
+.greycontainer.mt40
+  .latestprojectcontianer.container.mt40
+    h2.heading1
+      span.maintext Последние галереи
+    .column4.carousel
+      ul.mt40.slides
+        - Refinery::Portfolio::Gallery.all.each do |gallery|
+          li
+            .thumbnail
+              .relativediv
+                /= link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
+                = image_tag gallery.cover_image.image.url, alt: gallery.cover_image.title, style: 'max-height: 198px;'
+                .viewicons
+                  = link_to gallery.cover_image.image.url, class: 'tooltip-test prettyphotpopup', 'data-original-title': 'View' do
+                    i.icon-search
+                  = link_to refinery.portfolio_gallery_path(gallery), class: 'tooltip-test', 'data-original-title': 'Link' do
+                    i.icon-link
+              .caption  
+                h3
+                  = link_to gallery.title, refinery.portfolio_gallery_path(gallery)            
 
  
