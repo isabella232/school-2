@@ -24,10 +24,9 @@
             <div class="sidewidt">
               <h2 class="heading2"><span> <i class="icon-envelope"></i> Контактная информация</span></h2>
                <div class="contactlinks">
-                <i class="icon-phone"></i> <strong>Телефон</strong>: (012) 333-7890<br>
-                <i class="icon-phone"></i> <strong>Факс</strong>: (123) 444-7890<br>
-                <i class="icon-envelope"></i> <strong>Email</strong>: test@contactus.com<br>
-                <i class="icon-globe"></i> <strong>Сайт</strong>: yourcompanyname.com<br>
+                <i class="icon-phone"></i> <strong>Телефон</strong>: <%= ::Refinery::Setting.find_or_set(:phone_number, '+7 34141 51590') %><br>
+                <i class="icon-envelope"></i> <strong>Email</strong>: <%= ::Refinery::Setting.find_or_set(:main_email, 'ler.zakharova2013@yandex.ru') %><br>
+                <i class="icon-globe"></i> <strong>Сайт</strong>: <%= ::Refinery::Setting.find_or_set(:site_name, 'http://www.glazov-sport1.ru') %><br>
                 </div>
               
             </div>
