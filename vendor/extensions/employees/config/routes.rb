@@ -2,7 +2,11 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :employees do
-    resources :employees, :path => '', :only => [:index, :show]
+    resources :employees, :path => '', :only => [:index, :show] do 
+      collection do 
+        get 'coaches'
+      end
+    end  
   end
 
   # Admin routes
@@ -19,7 +23,7 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :employees do
-    resources :roles, :only => [:index, :show]
+    resources :roles, :only => [:index, :index]
   end
 
   # Admin routes

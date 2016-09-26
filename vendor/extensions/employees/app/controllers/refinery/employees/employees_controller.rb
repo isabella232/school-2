@@ -3,7 +3,7 @@ module Refinery
     class EmployeesController < ::ApplicationController
 
       #before_action :find_all_employees
-      before_action :find_page
+      before_action :find_page, only: [:index, :show]
 
       def index
         @employees = Employee.administration.order('position ASC')
@@ -19,6 +19,11 @@ module Refinery
         # by swapping @page for @employee in the line below:
         present(@page)
       end
+      
+      def coaches
+        @coaches = Employee.coaches.order('position ASC')
+        @page = ::Refinery::Page.where(:link_url => "/employees/coaches").first
+      end  
 
     protected
 
