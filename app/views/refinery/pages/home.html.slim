@@ -24,33 +24,54 @@ section.slider
         ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.
 
 
+/.container.mt40
+/  ul.features.row
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-html5.font60
+/      <br>
+/      | Text 1
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-twitter.font60
+/      <br>
+/      | Text 2
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-gift.font60
+/      <br>
+/      | Text 3      
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-flag.font60
+/      <br>
+/      | Text 4  
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-css3.font60
+/      <br>
+/      | Text 5  
+/    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
+/      i.icon-thumbs-up.font60
+/      <br>
+/      | Text 6
+
 .container.mt40
-  ul.features.row
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-html5.font60
-      <br>
-      | Text 1
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-twitter.font60
-      <br>
-      | Text 2
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-gift.font60
-      <br>
-      | Text 3      
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-flag.font60
-      <br>
-      | Text 4  
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-css3.font60
-      <br>
-      | Text 5  
-    li.col-lg-2.col-md-2.col-sm-4.col-xs-6
-      i.icon-thumbs-up.font60
-      <br>
-      | Text 6  
-    
+  h2.heading1
+    span.maintext Как записаться в секцию
+    a.btn.btn-orange.btn-small.pull-right Узнать больше
+  .row
+    ul.ourprocess.mb40
+      li.col-lg-4.col-xs-12.col-sm-4
+        i.icon-list-ol.font96.pull-left
+        .processdetails
+          h3 Шаг 1
+          p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+      li.col-lg-4.col-xs-12.col-sm-4
+        i.icon-cog.font96.pull-left
+        .processdetails
+          h3 Шаг 2
+          p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+      li.col-lg-4.col-xs-12.col-sm-4
+        i.icon-smile.font96.pull-left
+        .processdetails.last
+          h3 Шаг 3
+          p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.
 
 .greycontainer.mt40
   .latestprojectcontianer.container.mt40
@@ -71,3 +92,50 @@ section.slider
               .caption  
                 h3
                   = link_to  section.title, refinery.sections_section_path(section)
+
+
+.container.mt40
+  .container
+    .row 
+      .col-lg-6.col-xs-12.col-sm-6
+        h2.heading1
+          span.maintext Ближайшие турниры
+          a.btn.btn-orange.btn-small.pull-right Календарь
+        .ourservicesmin
+          a.accrodian-trigger
+            | Турнир 1
+          .accrodian-data
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+          a.accrodian-trigger
+            | Турнир 2
+          .accrodian-data
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+          a.accrodian-trigger
+            | Турнир 3
+          .accrodian-data
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+          a.accrodian-trigger
+            | Турнир 4
+          .accrodian-data
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+          a.accrodian-trigger
+            | Турнир 5
+          div.accrodian-data
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      .col-lg-6.col-xs-12.col-sm-6
+        h2.heading1
+          span.maintext Последние новости
+          a.btn.btn-orange.btn-small.pull-right Новости
+        ul#myTab.nav.nav-tabs        
+          - Refinery::Blog::Post.all.take(3).each do |post|
+            li
+              = link_to  post.title, "#post#{post.id}"
+        .tab-content.mytab
+          - Refinery::Blog::Post.all.take(3).each do |post|
+            .tab-pane id="post#{post.id}"
+              = post.custom_teaser.html_safe
+              = link_to 'Читать', refinery.blog_post_path(post), class: "btn btn-orange btn-small pull-right"
+
+            
+
+ 
