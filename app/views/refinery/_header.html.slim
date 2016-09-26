@@ -3,23 +3,23 @@
     = link_to refinery.root_path, class: 'logo pull-left' do
       = image_tag 'logo.png', width: '70%'
 
-    .socialtop.pull-right
+    .socialtop.pull-right.callnumber
       .call
         i.icon-phone
           | &nbsp;#{t('call_us')}&nbsp;:
           span.orange
-            = ::Refinery::Setting.find_or_set(:phone_number, '+7 34141 30000')
+            = ::Refinery::Setting.find_or_set(:phone_number, '+7 34141 51590')
 
-      ul.pull-right
-        li
-          = link_to '', class: 'tooltip-test', data: {original_title: 'Facebook'} do
-            i.icon-facebook
-        li
-          = link_to '', class: 'tooltip-test', data: {original_title: 'Twitter'} do
-            i.icon-twitter
-        li
-          = link_to '', class: 'tooltip-test', data: {original_title: 'LinkedIn'} do
-            i.icon-linkedin
+      /ul.pull-right
+      /  li
+      /    = link_to '', class: 'tooltip-test', data: {original_title: 'Facebook'} do
+      /      i.icon-facebook
+      /  li
+      /    = link_to '', class: 'tooltip-test', data: {original_title: 'Twitter'} do
+      /      i.icon-twitter
+      /  li
+      /    = link_to '', class: 'tooltip-test', data: {original_title: 'LinkedIn'} do
+      /      i.icon-linkedin
 
 
     .pull-right.topsearch

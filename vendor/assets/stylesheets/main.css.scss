@@ -208,8 +208,9 @@ li.dropdown { list-style: none }
 .socialtop ul li a { background: #F2F2F2; color: #999999; display: inline-block; width: 26px; height: 26px; font-size: 16px; text-align: center; line-height: 26px; }
 .socialtop ul li a i { margin-right: 0px; transition: all 0.05s ease-in-out 0.05s; }
 .socialtop ul li a:hover i { transition: all 0.05s ease-in-out 0.05s; color: #000000; }
+.socialtop.callnumber {margin: 27px 0 0 0; font-size: 16px}
 .welcometxt { margin: 7px 0 0 0 }
-.headerdetails { padding: 40px 0; border-bottom: 1px solid #E7E7E7 }
+.headerdetails { padding: 20px 0; border-bottom: 1px solid #E7E7E7 }
 .topsearch { margin: 23px 65px 0 0 }
 .topsearch .form-control { width: auto }
 .topcart { padding: 0px; margin-top: 24px;  border: 1px solid #E7E7E7 }
