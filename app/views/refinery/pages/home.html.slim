@@ -129,4 +129,14 @@ section.slider
                 h3
                   = link_to gallery.title, refinery.portfolio_gallery_path(gallery)            
 
+.container.mt40
+  section#ourclient.container.mt40.mb40
+    h2.heading1
+      span.maintext Наши партнёры  
+    .column5.carousel
+      ul.mt40.slides
+        - 6.times do 
+          li= image_tag "brand1.jpg"
+
+
  
