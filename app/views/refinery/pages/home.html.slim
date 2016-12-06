@@ -55,11 +55,11 @@ section.slider
           li
             .thumbnail
               .relativediv
-                = image_tag section.photo_url, alt: section.title, style: 'max-height: 198px;'
+                = image_tag section.photo_url, alt: section.title, style: 'height: 198px;'
                 .viewicons
-                  = link_to section.photo_url, class: 'tooltip-test prettyphotpopup', 'data-original-title': 'View' do
+                  = link_to section.photo_url, class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
                     i.icon-search
-                  = link_to refinery.sections_section_path(section), class: 'tooltip-test', 'data-original-title': 'Link' do
+                  = link_to refinery.sections_section_path(section), class: 'tooltip-test', 'data-original-title': 'Подробнее' do
                     i.icon-link
               .caption  
                 h3
@@ -97,16 +97,20 @@ section.slider
       .col-lg-6.col-xs-12.col-sm-6
         h2.heading1
           span.maintext Последние новости
-          a.btn.btn-orange.btn-small.pull-right Новости
+          = link_to 'Новости', "/blog", class: 'btn btn-orange btn-small pull-right'
         ul#myTab.nav.nav-tabs        
-          - Refinery::Blog::Post.all.take(3).each do |post|
+          - last_blog_posts(2).each do |post|
             li
-              = link_to  post.title, "#post#{post.id}"
+              = link_to truncate(post.title, length: 30), "#post#{post.id}", data: {toggle: "tooltip", placement: "top"}, title: post.title 
         .tab-content.mytab
-          - Refinery::Blog::Post.all.take(3).each do |post|
+          - last_blog_posts(2).each do |post|
             .tab-pane id="post#{post.id}"
-              = post.custom_teaser.html_safe
-              = link_to 'Читать', refinery.blog_post_path(post), class: "btn btn-orange btn-small pull-right"
+              - if post.custom_teaser.empty?
+                p= post.title
+                = truncate(strip_tags(post.body), length: 500)
+              - else  
+                = post.custom_teaser.html_safe
+              = link_to 'Подробнее', refinery.blog_post_path(post), class: "btn btn-orange btn-small pull-right"
 
 .greycontainer.mt40
   .latestprojectcontianer.container.mt40
@@ -121,9 +125,9 @@ section.slider
                 /= link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
                 = image_tag gallery.cover_image.image.url, alt: gallery.cover_image.title, style: 'max-height: 198px;'
                 .viewicons
-                  = link_to gallery.cover_image.image.url, class: 'tooltip-test prettyphotpopup', 'data-original-title': 'View' do
+                  = link_to gallery.cover_image.image.url, class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
                     i.icon-search
-                  = link_to refinery.portfolio_gallery_path(gallery), class: 'tooltip-test', 'data-original-title': 'Link' do
+                  = link_to refinery.portfolio_gallery_path(gallery), class: 'tooltip-test', 'data-original-title': 'Подробнее' do
                     i.icon-link
               .caption  
                 h3
