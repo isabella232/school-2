@@ -21,7 +21,8 @@ module Refinery
       end
       
       def coaches
-        @coaches = Employee.coaches.order('position ASC')
+        @coaches = Employee.includes(:role, :section).coaches.order('refinery_sections.position ASC, refinery_employees.position ASC')
+        @sections = Refinery::Sections::Section.all#order('position ASC') 
         @page = ::Refinery::Page.where(:link_url => "/employees/coaches").first
       end  
 

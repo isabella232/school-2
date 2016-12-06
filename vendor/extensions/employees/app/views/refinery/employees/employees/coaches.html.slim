@@ -13,19 +13,30 @@
 
   .row.mt40
     .col-lg-12.col-md-12.col-sm-12.col-xs-12
-      section.row id='ourteam'
-        ul.thumbnails.clearfix
-          - @coaches.each do |coach|
-            li.col-lg-6.col-md-6.col-sm-12.col-xs-12.employe-thumb
-              .row
-                .col-lg-4.col-md-4.col-sm-12.col-xs-12
-                  .thumbnail
-                    = image_tag coach.photo_url, alt: coach.full_name
-                .col-lg-8.col-md-8.col-sm-12.col-xs-12
-                  p.username
-                    = coach.full_name
-                    br
-                    span= coach.role.title
-                    p.mt10
-                      = raw coach.description.truncate(300)
+      section#options.clearfix
+        ul#filters.option-set.clearfix[data-option-key="filter"]
+          li
+            = link_to 'Показать всех', "#filter", class: "selected", data: {"option-value": "*"}
+          - @sections.each do |section|
+            li
+              = link_to section.title, "#filter", data: {"option-value": ".section#{section.id}"}
+
+      ul.clickable.clearfix.row.column2#portfoliocontainer
+        - @coaches.each do |coach|
+          li class="element section#{coach.section.id}" data-symbol="Hg" data-category="transition" 
+            .row
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12
+                .thumbnail
+                  .relativediv
+                    = image_tag coach.photo_url, alt: coach.full_name, style: 'height: 227px;'
+                    .viewicons
+                      = link_to coach.photo_url, class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
+                        i.icon-search
+              .col-lg-8.col-md-8.col-sm-12.col-xs-12
+                p.username
+                  = coach.full_name
+                  br
+                  span= coach.role.title
+                  p.mt10
+                    = raw coach.description.truncate(300)
   .row.mt40 
