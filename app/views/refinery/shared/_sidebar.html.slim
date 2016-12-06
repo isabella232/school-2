@@ -2,3 +2,11 @@ div
   h2.heading1
     span.maintext
       = t('last_blog')
+  #latestnews
+    ul
+      - last_blog_posts(5).each do |post|
+        li 
+          .newstitle
+            h4= link_to post.title, refinery.blog_post_path(post)
+            i.icon-calendar.font24
+            span.date= l(post.published_at, format: :short) 
