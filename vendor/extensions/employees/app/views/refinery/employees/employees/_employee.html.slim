@@ -2,7 +2,11 @@ li.col-lg-6.col-md-6.col-sm-12.col-xs-12.employe-thumb
   .row
     .col-lg-4.col-md-4.col-sm-12.col-xs-12
       .thumbnail
-        = image_tag employee.photo_url, alt: employee.full_name
+        .relativediv
+          = image_tag employee.photo_url, alt: employee.full_name, style: 'height: 227px;'
+          .viewicons
+            = link_to employee.photo_url, class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
+              i.icon-search
     .col-lg-8.col-md-8.col-sm-12.col-xs-12
       p.username
         = employee.full_name

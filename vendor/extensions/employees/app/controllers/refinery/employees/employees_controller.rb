@@ -6,7 +6,7 @@ module Refinery
       before_action :find_page, only: [:index, :show]
 
       def index
-        @employees = Employee.administration.order('position ASC')
+        @employees = Employee.includes(:role).administration.order('refinery_employees_roles.position ASC')
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @employee in the line below:
         present(@page)
