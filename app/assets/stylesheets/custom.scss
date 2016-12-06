@@ -53,3 +53,18 @@ body, a, .thumbnail .caption, #header3 #mainmenu .subnav {color: #5E6166}
 .mt40 section#blogfullpage {
   margin-bottom: 100px;
 }
+
+/* Pagination*/
+.pagination * {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #5E6166;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+.pagination *:hover, .pagination a:hover {background: #BEC3CB; color: #5E6166}
+.pagination em.current {background: #FF9900; color: #fff}

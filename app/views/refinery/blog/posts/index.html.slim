@@ -16,11 +16,12 @@
       .col-lg-9.col-md-9.col-sm-12.col-xs-12.mt40column
         h2.heading1
           span.maintext= t('all_news')
-        #productlist
+        #productlist style="margin-bottom: 100px;"
           .featureprojectwrap.bloglist
             ul
               = render partial: '/refinery/blog/shared/post', collection: @posts
-            = will_paginate @posts
+            .text-center
+              = will_paginate @posts
       .col-lg-3.col-md-3.col-sm-12.col-xs-12.mt40column
         = render '/refinery/blog/shared/body_content_right'
   - else
