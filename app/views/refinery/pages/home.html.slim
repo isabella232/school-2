@@ -118,14 +118,13 @@ section.slider
       span.maintext Последние галереи
     .column4.carousel
       ul.mt40.slides
-        - Refinery::Portfolio::Gallery.all.each do |gallery|
+        - Refinery::Portfolio::Gallery.where.not(parent_id: nil).order('created_at DESC').take(8).each do |gallery|
           li
             .thumbnail
               .relativediv
-                /= link_to image_fu(gallery.cover_image.image, '360x266', {title: gallery.cover_image.title}), refinery.portfolio_gallery_path(gallery) 
-                = image_tag gallery.cover_image.image.url, alt: gallery.cover_image.title, style: 'max-height: 198px;'
+                = image_tag gallery_cover_image(gallery), alt: gallery.cover_image.present? ? gallery.cover_image.title : '' , style: 'max-height: 198px;'
                 .viewicons
-                  = link_to gallery.cover_image.image.url, class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
+                  = link_to gallery_cover_image(gallery), class: 'tooltip-test fancybox', 'data-original-title': 'Увеличить' do
                     i.icon-search
                   = link_to refinery.portfolio_gallery_path(gallery), class: 'tooltip-test', 'data-original-title': 'Подробнее' do
                     i.icon-link
