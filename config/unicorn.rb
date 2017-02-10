@@ -1,5 +1,5 @@
 app_name = 'school'
-deploy_to = "/home/devop/applications/#{app_name}"
+deploy_to = "/opt/rails/#{app_name}"
 
 current_path = "#{deploy_to}/current"
 shared_path = "#{deploy_to}/shared"
