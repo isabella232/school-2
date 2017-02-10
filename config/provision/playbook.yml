@@ -3,11 +3,11 @@
 
   vars:
     ruby_version: '2.2.3'
-    user: 'devop'
-    home: '/home/{{ user }}'
+    user: 'root'
+    home: '/root'
     rbenv_root: '{{ home }}/.rbenv'
     name: 'school'
-    application: '{{ home }}/applications/{{ name }}'
+    application: '/opt/rails/{{ name }}'
 
 
   tasks:
@@ -24,9 +24,9 @@
         - 'zlib1g-dev'
         - 'libcurl4-openssl-dev'
         - 'git'
-        - 'nginx'
-        - 'redis-server'
-        - 'postgresql'
+        #- 'nginx'
+        #- 'redis-server'
+        #- 'postgresql'
         - 'postgresql-contrib'
         - 'libpq-dev'
         - 'imagemagick'
@@ -34,17 +34,17 @@
         - 'nodejs'
         - 'htop'
 
-    - name: 'account | create'
-      user: 'name={{ user }} shell=/bin/bash'
+    #- name: 'account | create'
+    #  user: 'name={{ user }} shell=/bin/bash'
 
-    - name: 'account | copy authorized keys'
-      shell: 'mkdir -p {{ home }}/.ssh -m 700 && cp /root/.ssh/authorized_keys {{ home }}/.ssh && chown -R {{ user }}:{{ user }} {{ home }}/.ssh'
+    #- name: 'account | copy authorized keys'
+    #  shell: 'mkdir -p {{ home }}/.ssh -m 700 && cp /root/.ssh/authorized_keys {{ home }}/.ssh && chown -R {{ user }}:{{ user }} {{ home }}/.ssh'
 
-    - name: 'account | copy ssh private key'
-      copy: 'src=keys/id_rsa dest={{ home }}/.ssh/id_rsa owner={{ user }} group={{ user }} mode=0600'
+    #- name: 'account | copy ssh private key'
+    #  copy: 'src=keys/id_rsa dest={{ home }}/.ssh/id_rsa owner={{ user }} group={{ user }} mode=0600'
 
-    - name: 'account | copy ssh public key'
-      copy: 'src=keys/id_rsa.pub dest={{ home }}/.ssh/id_rsa.pub owner={{ user }} group={{ user }} mode=0644'
+    #- name: 'account | copy ssh public key'
+    #  copy: 'src=keys/id_rsa.pub dest={{ home }}/.ssh/id_rsa.pub owner={{ user }} group={{ user }} mode=0644'
 
     # Install ruby-build, rbenv, bundler
     - name: 'rbenv | clone repo'
@@ -92,9 +92,9 @@
       shell: 'RBENV_ROOT={{ rbenv_root }} PATH="$RBENV_ROOT/bin:$PATH" rbenv exec gem install bundler'
       when: 'ruby_installed|failed'
 
-    - name: 'rbenv | change owner'
-      shell: 'chown -R {{ user }}:{{ user }} {{ rbenv_root }}'
-      when: 'ruby_installed|failed'
+    #- name: 'rbenv | change owner'
+    #  shell: 'chown -R {{ user }}:{{ user }} {{ rbenv_root }}'
+    #  when: 'ruby_installed|failed'
 
     # Install posgresql
     - name: 'postgresql | check user'
@@ -111,7 +111,7 @@
       when: 'postgres_login|failed'
 
     - name: 'postgresql | create shared directory'
-      shell: 'mkdir -p {{ application }}/shared/config -m 775 && chown -R {{ user }}:{{ user }} {{ home }}/applications'
+      shell: 'mkdir -p {{ application }}/shared/config -m 775'
       when: 'postgres_login|failed'
 
     - name: 'postgresql | copy database.yml'
@@ -124,6 +124,7 @@
 
     - name: 'rails | copy secrets.yml'
       copy: 'src=configs/secrets.yml dest={{ application }}/shared/config/secrets.yml owner={{ user }} group={{ user }} mode=0644'
+      ignore_errors: yes
 
     # Установка и настройка веб сервера nginx
     - name: 'nginx | check config'

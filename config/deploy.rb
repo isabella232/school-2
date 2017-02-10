@@ -5,13 +5,15 @@ set :repo_url, "git@github.com:macrocoders/#{fetch(:application)}.git"
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, "/home/devop/applications/#{fetch(:application)}"
+set :deploy_to, "/opt/rails/#{fetch(:application)}"
 set :scm, :git
 set :ssh_options, forward_agent: true
 set :rails_env, 'production'
-set :user, "devop"
-set :use_sudo, false
-set :script_dir, "/home/#{fetch(:user)}/script"
+
+#set :user, "root"
+#set :use_sudo, false
+#set :script_dir, "/home/#{fetch(:user)}/script"
+
 set :deploy_via, :remote_cache
 
 set :linked_files, %w(config/database.yml config/secrets.yml)
@@ -30,30 +32,30 @@ namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export do
     on roles(:app) do
-      execute "mkdir -p #{fetch(:script_dir)} && cd #{current_path} && #{fetch(:rbenv_prefix)} bundle exec foreman export initscript /home/devop/script " +
+      execute "cd #{current_path} && #{fetch(:rbenv_prefix)} bundle exec foreman export initscript /etc/init.d " +
       "-f ./Procfile.production -a #{fetch(:application)} -u #{fetch(:user)} -l #{shared_path}/log"
-      execute "chmod 755 #{fetch(:script_dir)}/#{fetch(:application)}"
+      execute "chmod 755 /etc/init.d/#{fetch(:application)}"
     end
   end
 
   desc 'Start the application services'
   task :start do
     on roles(:app) do
-      execute "bash #{fetch(:script_dir)}/#{fetch(:application)} start"
+      execute "bash /etc/init.d/#{fetch(:application)} start"
     end
   end
 
   desc 'Stop the application services'
   task :stop do
     on roles(:app) do
-      execute "bash #{fetch(:script_dir)}/#{fetch(:application)} stop"
+      execute "bash /etc/init.d/#{fetch(:application)} stop"
     end
   end
 
   desc 'Restart the application services'
   task :restart do
     on roles(:app) do
-      execute "bash #{fetch(:script_dir)}/#{fetch(:application)} stop; bash #{fetch(:script_dir)}/#{fetch(:application)} start"
+      execute "bash /etc/init.d/#{fetch(:application)} stop; bash /etc/init.d/#{fetch(:application)} start"
     end
   end
 
